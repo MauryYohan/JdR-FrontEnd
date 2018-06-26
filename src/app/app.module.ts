@@ -4,18 +4,16 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import {Routes} from '@angular/router';
-import { AccueilComponent } from './accueil/accueil.component';
 import { ConnectComponent } from './connect/connect.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'accueil', pathMatch: 'full'},
-  {path: 'accueil', component: AccueilComponent}
+  {path: 'connect', component: ConnectComponent}
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
-    AccueilComponent,
     ConnectComponent
   ],
   imports: [
