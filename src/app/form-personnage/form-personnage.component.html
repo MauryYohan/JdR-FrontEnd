@@ -1,0 +1,85 @@
+<form [formGroup]="personnageform" >
+  <div class="form-group">
+    <label for="text">Nom du Personnage</label>
+    <input type="text" class="form-control" id="text" aria-describedby="Nom" placeholder="Entrer un nom">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="class">Choisir sa classe</label>
+      <select id="class" class="form-control">
+        <option selected>Choisir....</option>
+        <option>Barbare</option>
+        <option>Barde</option>
+        <option>Druide</option>
+        <option>Ensorceleur</option>
+        <option>Guerrier</option>
+        <option>Magicien</option>
+        <option>Moine</option>
+        <option>Paladin</option>
+        <option>Prêtre</option>
+        <option>Rôdeur</option>
+        <option>Roublard</option>
+      </select>
+  </div>
+  <div class="form-group">
+    <label for="pv">Points de vie</label>
+    <p><ngb-progressbar type="info" [value]={{personnage.pv}}></ngb-progressbar><input type="number" class="form-control" id="pv"></p>
+  </div>
+  <div class="form-group">
+    <label for="puissance">Puissance</label>
+    <p><ngb-progressbar type="info" [value]={{personnage.puissance}}></ngb-progressbar><input type="number" class="form-control" id="puissance"></p>
+  </div>
+  <div class="form-group">
+    <label for="defense">Défense</label>
+    <p><ngb-progressbar type="info" [value]={{personnage.defense}}></ngb-progressbar><input type="number" class="form-control" id="defense"></p>
+  </div>
+  <div class="form-group">
+    <label for="esprit">Esprit</label>
+    <p><ngb-progressbar type="info" [value]={{personnage.esprit}}></ngb-progressbar><input type="number" class="form-control" id="esprit"></p>
+  </div>
+  <div class="form-group">
+    <label for="intelligence">Intelligence</label>
+    <p><ngb-progressbar type="info" [value]={{personnage.intelligence}}></ngb-progressbar><input type="number" class="form-control" id="intelligence"></p>
+  </div>
+  <div class="form-group">
+    <label for="init">Init</label>
+    <p><ngb-progressbar type="info" [value]={{personnage.init}}></ngb-progressbar><input type="number" class="form-control" id="init"></p>
+  </div>
+  <div class="form-group">
+    <label for="equipement">Equipement</label>
+    <p><ngb-progressbar type="info" [value]={{personnage.equipement}}></ngb-progressbar><input type="number" class="form-control" id="equipement"></p>
+  </div>
+  <div class="form-group">
+    <label for="inventaire">Inventaire</label>
+    <p><ngb-progressbar type="info" [value]={{personnage.inventaire}}></ngb-progressbar><input type="number" class="form-control" id="inventaire"></p>
+  </div>
+  <div class="form-group">
+    <label for="background">Background</label>
+    <p><ngb-progressbar type="info" [value]={{personnage.background}}></ngb-progressbar><input type="number" class="form-control" id="background"></p>
+  </div>
+  <div class="form-group">
+    <label for="race">Choisir sa race</label>
+      <select id="race" class="form-control">
+        <option selected>Choisir....</option>
+        <option>Demi-elfe</option>
+        <option>Demi-orque</option>
+        <option>Elfe</option>
+        <option>Gnome</option>
+        <option>Halfelin</option>
+        <option>Humain</option>
+        <option>Nain</option>
+      </select>
+  </div>
+  <div class="form-group">
+    <label for="sexe">Choisir le sexe</label>
+    <select id="sexe" class="form-control">
+      <option selected>Choisir....</option>
+      <option>Homme</option>
+      <option>Femme</option>
+      <option>Trans</option>
+      <option>Inconnu</option>
+      <option>Asexué</option>
+    </select>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
