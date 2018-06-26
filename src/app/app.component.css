@@ -1,0 +1,36 @@
+/* Mon CSS aux petits oignons */
+
+/* Small devices (landscape phones, 576px and up)
+   Medium devices (tablets, 768px and up)
+   Large devices (desktops, 992px and up)
+   Extra large devices (large desktops, 1200px and up)
+
+   */
+@media (min-width: 576px) {
+  .container {
+    width: 560px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1140px;
+  }
+}
+
+.row {
+  margin-right: -15px;
+  margin-left: -15px;
+}
