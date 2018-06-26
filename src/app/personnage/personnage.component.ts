@@ -11,11 +11,7 @@ export class PersonnageComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.chevalService.list().subscribe(
-      listDesPersonnages => {
-        console.log(listDesPersonnages);
-        this.persoList = listDesPersonnages;
-      });
+
   }
 
 }
