@@ -1,15 +1,12 @@
 <ng-template #content let-c="close" let-d="dismiss">
   <div class="modal-header">
     <h4 class="modal-title">Création du Personnage</h4>
-    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
-      <span aria-hidden="true">&times;</span>
-    </button>
   </div>
   <div class="modal-body">
     <app-form-personnage></app-form-personnage>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-light" (click)="c('Close click')">Valider</button>
+    <button type="button" class="btn btn-outline-primary" (click)="c('Close click')">Valider</button>
   </div>
 </ng-template>
-<button class="btn btn-outline-primary mb-2 mr-2" (click)="openBackDropCustomClass(content)">Création du personnage</button>
+<button class="btn btn-outline-primary" (click)="openBackDropCustomClass(content)">Création du personnage</button>

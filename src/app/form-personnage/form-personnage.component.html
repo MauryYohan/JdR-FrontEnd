@@ -1,8 +1,7 @@
-<form [formGroup]="personnageform" >
+<form>
   <div class="form-group">
     <label for="text">Nom du Personnage</label>
     <input type="text" class="form-control" id="text" aria-describedby="Nom" placeholder="Entrer un nom">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
   </div>
   <div class="form-group">
     <label for="class">Choisir sa classe</label>
@@ -21,41 +20,81 @@
         <option>Roublard</option>
       </select>
   </div>
-  <div class="form-group">
-    <label for="pv">Points de vie</label>
-    <p><ngb-progressbar type="info" [value]={{personnage.pv}}></ngb-progressbar><input type="number" class="form-control" id="pv"></p>
+  <label for="pv">Points de vie</label><br>
+  <div class="form-row">
+    <div class="form-group col-sm-10">
+      <ngb-progressbar type="info" [value]="25"></ngb-progressbar>
+    </div>
+    <div class="form-group col-sm-2">
+      <input type="number" class="form-control" id="pv">
+    </div>
   </div>
-  <div class="form-group">
-    <label for="puissance">Puissance</label>
-    <p><ngb-progressbar type="info" [value]={{personnage.puissance}}></ngb-progressbar><input type="number" class="form-control" id="puissance"></p>
+  <label for="puissance">Puissance</label>
+  <div class="form-row">
+    <div class="form-group col-sm-10">
+      <ngb-progressbar type="info" [value]="25"></ngb-progressbar>
+    </div>
+    <div class="form-group col-sm-2">
+      <input type="number" class="form-control" id="puissance">
+    </div>
   </div>
-  <div class="form-group">
-    <label for="defense">Défense</label>
-    <p><ngb-progressbar type="info" [value]={{personnage.defense}}></ngb-progressbar><input type="number" class="form-control" id="defense"></p>
+  <label for="defense">Défense</label>
+  <div class="form-row">
+    <div class="form-group col-sm-10">
+      <ngb-progressbar type="info" [value]="25"></ngb-progressbar>
+    </div>
+    <div class="form-group col-sm-2">
+      <input type="number" class="form-control" id="defense">
+    </div>
   </div>
-  <div class="form-group">
-    <label for="esprit">Esprit</label>
-    <p><ngb-progressbar type="info" [value]={{personnage.esprit}}></ngb-progressbar><input type="number" class="form-control" id="esprit"></p>
+  <label for="esprit">Esprit</label>
+  <div class="form-row">
+    <div class="form-group col-sm-10">
+      <ngb-progressbar type="info" [value]="25"></ngb-progressbar>
+    </div>
+    <div class="form-group col-sm-2">
+      <input type="number" class="form-control" id="esprit">
+    </div>
   </div>
-  <div class="form-group">
-    <label for="intelligence">Intelligence</label>
-    <p><ngb-progressbar type="info" [value]={{personnage.intelligence}}></ngb-progressbar><input type="number" class="form-control" id="intelligence"></p>
+  <label for="intelligence">Intelligence</label>
+  <div class="form-row">
+    <div class="form-group col-sm-10">
+      <ngb-progressbar type="info" [value]="25"></ngb-progressbar>
+    </div>
+    <div class="form-group col-sm-2">
+      <input type="number" class="form-control" id="intelligence">
+    </div>
   </div>
-  <div class="form-group">
-    <label for="init">Init</label>
-    <p><ngb-progressbar type="info" [value]={{personnage.init}}></ngb-progressbar><input type="number" class="form-control" id="init"></p>
+  <label for="init">Init</label>
+  <div class="form-row">
+    <div class="form-group col-sm-10">
+      <ngb-progressbar type="info" [value]="25"></ngb-progressbar>
+    </div>
+    <div class="form-group col-sm-2">
+      <input type="number" class="form-control" id="init">
+    </div>
   </div>
-  <div class="form-group">
-    <label for="equipement">Equipement</label>
-    <p><ngb-progressbar type="info" [value]={{personnage.equipement}}></ngb-progressbar><input type="number" class="form-control" id="equipement"></p>
+  <label for="inventaire">Inventaire</label>
+  <div class="form-row">
+    <div class="form-group col-sm-10">
+      <ngb-progressbar type="info" [value]="25"></ngb-progressbar>
+    </div>
+    <div class="form-group col-sm-2">
+      <input type="number" class="form-control" id="inventaire">
+    </div>
   </div>
-  <div class="form-group">
-    <label for="inventaire">Inventaire</label>
-    <p><ngb-progressbar type="info" [value]={{personnage.inventaire}}></ngb-progressbar><input type="number" class="form-control" id="inventaire"></p>
+  <label for="equipement">Equipement</label>
+  <div class="form-row">
+    <div class="form-group col-sm-10">
+      <ngb-progressbar type="info" [value]="25"></ngb-progressbar>
+    </div>
+    <div class="form-group col-sm-2">
+      <input type="number" class="form-control" id="equipement">
+    </div>
   </div>
   <div class="form-group">
     <label for="background">Background</label>
-    <p><ngb-progressbar type="info" [value]={{personnage.background}}></ngb-progressbar><input type="number" class="form-control" id="background"></p>
+    <input type="text" class="form-control" id="background" aria-describedby="Nom" placeholder="Raconter l'histoire de son personnage">
   </div>
   <div class="form-group">
     <label for="race">Choisir sa race</label>
@@ -81,5 +120,4 @@
       <option>Asexué</option>
     </select>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
 </form>
