@@ -5,6 +5,8 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import {RouterModule, Routes} from '@angular/router';
 import { ConnectComponent } from './connect/connect.component';
+import { FormPersonnageComponent } from './form-personnage/form-personnage.component';
+import { PersonnageComponent } from './personnage/personnage.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'connect', pathMatch: 'full'},
@@ -14,7 +16,9 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    ConnectComponent
+    ConnectComponent,
+    FormPersonnageComponent,
+    PersonnageComponent
   ],
   imports: [
     BrowserModule,

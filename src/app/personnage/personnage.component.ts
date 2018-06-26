@@ -1,0 +1,21 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-personnage',
+  templateUrl: './personnage.component.html',
+  styleUrls: ['./personnage.component.css']
+})
+export class PersonnageComponent implements OnInit {
+
+  persoList;
+  constructor() { }
+
+  ngOnInit() {
+    this.chevalService.list().subscribe(
+      listDesPersonnages => {
+        console.log(listDesPersonnages);
+        this.persoList = listDesPersonnages;
+      });
+  }
+
+}
