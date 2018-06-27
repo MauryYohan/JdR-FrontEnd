@@ -112,14 +112,13 @@
       <option>Asexué</option>
     </select>
   </div>
-  <div class="form-group">
+  <!--<div class="form-group">
     <label for="avatar">Choisir son avatar</label>
-    <select id="avatar" class="form-control" formControlName="avatar" placeholder="choisir l'avatar">
-      <option selected>Choisir....</option>
-      <option>Homme</option>
-
-    </select>
-  </div>
-
-
+      <img src="/app/assets/00396952-photo-the-legend-of-zelda-twilight-princess.jpg" formControlName="avatar" id="avatar" class="form-control" />
+  </div>-->
+    <div class="form-group">
+      <label for="id_joueur"></label>
+      <input type="hidden" formControlName="id" id="id_joueur" aria-describedby="id">
+    </div>
 </form>
+<button type="button" class="btn btn-outline-primary" (click)="showAddDialog()">Valider</button>

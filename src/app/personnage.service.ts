@@ -27,7 +27,7 @@ export class PersonnageService {
 
     let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
-    return this.http.put(this.baseUrl, personnage,  {headers})
+    return this.http.put(this.baseUrl, personnage,  {headers});
   }
   delete(id: number ): Observable<any>{
 

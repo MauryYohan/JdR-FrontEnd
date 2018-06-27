@@ -2,7 +2,9 @@
   background-color: #5cb3fd;
 }
 
-/*.modal-title{
-  background-image: url("assets/4perso.png");
+.modal-header{
+  background-image: url("/assets/4perso.png");
   background-repeat: no-repeat;
-}*/
+  width: 500px;
+  height: 200px;
+}

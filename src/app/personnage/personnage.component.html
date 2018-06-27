@@ -1,12 +1,10 @@
 <ng-template #content let-c="close" let-d="dismiss">
   <div class="modal-header">
-    <h4 class="modal-title">Création du Personnage</h4>
   </div>
   <div class="modal-body">
+    <h4 class="modal-title">Création du Personnage</h4>
     <app-form-personnage></app-form-personnage>
   </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-outline-primary" (click)="c('Close click')">Valider</button>
-  </div>
+
 </ng-template>
 <button class="btn btn-outline-primary" (click)="openBackDropCustomClass(content)">Création du personnage</button>

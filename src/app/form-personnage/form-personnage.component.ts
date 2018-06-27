@@ -15,6 +15,7 @@ export class FormPersonnageComponent implements OnInit {
   personnageform: FormGroup ;
   formSubmitted = false;
   formtitle='Add';
+  display: boolean = false;
 
   constructor(private fb: FormBuilder, private router: Router, private ps: PersonnageService) { }
   @Output() output = new EventEmitter();
@@ -23,6 +24,8 @@ export class FormPersonnageComponent implements OnInit {
     if(!this.personnage) { // si le formulaire contient un incident vide,
       this.personnage = new Personnage();
       this.formtitle = 'Add';
+    }else{
+      this.showDialog();
     }
     console.log(this.personnage)
     this.personnageform = this.fb.group({
@@ -40,16 +43,42 @@ export class FormPersonnageComponent implements OnInit {
       'background': [this.personnage.background],
       'race': [this.personnage.race, [Validators.compose([Validators.required])]],
       'sexe': [this.personnage.sexe, [Validators.compose([Validators.required])]],
-      'avatar': ["", [Validators.compose([Validators.required])]]
+      'avatar': ["", [Validators.compose([Validators.required])]],
+      'id_joueur': ['']
     });
   }
 
   onSubmit(){
     this.formSubmitted = true;
     if(this.personnageform.valid) {
-      this.ps.add(this.personnageform.value).subscribe(
-        personnageFromDb => console.log(personnageFromDb));
+      if(this.personnageform.controls['id'].value>0){
+        this.ps.update(this.personnageform.value).subscribe(
+          personnage=>{
+            this.output.emit({'sev':'success', 'sum':'Update successfull!', 'detail': 'Personnage mis à jour:'+personnage.id});
+          })
+      }else{
+        this.ps.add(this.personnageform.value).subscribe(personnage=>{
+          this.output.emit({'sev':'success', 'sum':'Add successfull!', 'detail': 'Incident ajouté:'+personnage.id});
+      })
+      }
+      this.hideDialog();
+      }
+  }
+
+    showAddDialog(){
+      this.formtitle='Add';
+      this.personnage = new Personnage();
+      this.showDialog();
+    }
+
+    showDialog() {
+      this.formSubmitted = false;
+      this.display = true;
+      console.log(this.personnage);
+    }
+    hideDialog() {
+      this.display = false;
       this.router.navigate(['/creatPerso']);
     }
-  }
+
 }
