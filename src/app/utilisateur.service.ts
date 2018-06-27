@@ -7,6 +7,7 @@ import {Utilisateur} from './utilisateur';
 export class UtilisateurService {
 
   baseUrl = 'http://localhost:8090/jdr/utilisateurs/';
+  newUrl = '';
   constructor(private http: HttpClient) { }
 
   list(): Observable<Utilisateur>{
@@ -17,8 +18,9 @@ export class UtilisateurService {
     return this.http.get<Utilisateur>(this.baseUrl+id);
   }
 
-  getIdByLogin(login: string): Observable<any>{
-    return this.http.get<Utilisateur>(this.)
+  getIdByLogin(login: string): Observable<Utilisateur>{
+    this.newUrl = this.baseUrl+login;
+    return this.http.get<Utilisateur>(this.newUrl)
   }
 
   remove(id: number): Observable<Utilisateur>{
