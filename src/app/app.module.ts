@@ -12,6 +12,8 @@ import {JoueurService} from './joueur.service';
 import {HttpClientModule} from '@angular/common/http';
 import { UtilisateurListComponent } from './utilisateur-list/utilisateur-list.component';
 import { PartieComponent } from './partie/partie.component';
+import {UtilisateurService} from './utilisateur.service';
+import {PersonnageService} from './personnage.service';
 
 const routes: Routes = [
   {path: '', redirectTo: 'connect', pathMatch: 'full'},
@@ -38,7 +40,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     NgbModule.forRoot()
   ],
-  providers: [JoueurService],
+  providers: [JoueurService, UtilisateurService, PersonnageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
