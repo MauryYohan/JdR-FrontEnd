@@ -39,7 +39,8 @@ export class FormPersonnageComponent implements OnInit {
       'inventaire': [this.personnage.inventaire],
       'background': [this.personnage.background],
       'race': [this.personnage.race, [Validators.compose([Validators.required])]],
-      'sexe': [this.personnage.sexe, [Validators.compose([Validators.required])]]
+      'sexe': [this.personnage.sexe, [Validators.compose([Validators.required])]],
+      'avatar': ["", [Validators.compose([Validators.required])]]
     });
   }
 

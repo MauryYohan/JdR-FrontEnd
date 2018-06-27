@@ -11,7 +11,6 @@
   <div class="form-group">
     <label for="class">Choisir sa classe</label>
       <select id="class" class="form-control" formControlName="class">
-        <option selected>Choisir....</option>
         <option>Barbare</option>
         <option>Barde</option>
         <option>Druide</option>
@@ -37,74 +36,63 @@
   <label for="puissance">Puissance</label>
   <div class="form-row">
     <div class="form-group col-sm-10">
-      <ngb-progressbar min="1" max="5"  type="info" [value]="this.personnage.puissance"  formControlName="puissance" ngDefaultControl></ngb-progressbar>
+      <ngb-progressbar min="1" max="10"  type="info" [value]="this.personnage.puissance"  formControlName="puissance" ngDefaultControl></ngb-progressbar>
     </div>
     <div class="form-group col-sm-2">
-          <input min="1" max="5" type="number" class="form-control" [(ngModel)]="this.personnage.puissance" id="puissance" formControlName="puissance" ngDefaultControl>
+          <input min="1" max="10" type="number" class="form-control" [(ngModel)]="this.personnage.puissance" id="puissance" formControlName="puissance" ngDefaultControl>
     </div>
   </div>
   <label for="defense">Défense</label>
   <div class="form-row">
     <div class="form-group col-sm-10">
-      <ngb-progressbar  min="1" max="5" type="info" [value]="this.personnage.defense" formControlName="defense" ngDefaultControl></ngb-progressbar>
+      <ngb-progressbar  min="1" max="10" type="info" [value]="this.personnage.defense" formControlName="defense" ngDefaultControl></ngb-progressbar>
     </div>
     <div class="form-group col-sm-2">
-      <input type="number" min="1" max="5" class="form-control" [(ngModel)]="this.personnage.defense" id="defense" formControlName="defense" ngDefaultControl>
+      <input type="number" min="1" max="10" class="form-control" [(ngModel)]="this.personnage.defense" id="defense" formControlName="defense" ngDefaultControl>
     </div>
   </div>
   <label for="esprit">Esprit</label>
   <div class="form-row">
     <div class="form-group col-sm-10">
-      <ngb-progressbar  min="1" max="5" type="info" [value]="this.personnage.esprit" formControlName="esprit" ngDefaultControl></ngb-progressbar>
+      <ngb-progressbar  min="1" max="10" type="info" [value]="this.personnage.esprit" formControlName="esprit" ngDefaultControl></ngb-progressbar>
     </div>
     <div class="form-group col-sm-2">
-      <input type="number"  min="1" max="5" class="form-control" [(ngModel)]="this.personnage.esprit" id="esprit" formControlName="esprit" ngDefaultControl>
+      <input type="number"  min="1" max="10" class="form-control" [(ngModel)]="this.personnage.esprit" id="esprit" formControlName="esprit" ngDefaultControl>
     </div>
   </div>
   <label for="intelligence">Intelligence</label>
   <div class="form-row">
     <div class="form-group col-sm-10">
-      <ngb-progressbar min="1" max="5" type="info" [value]="this.personnage.intelligence" formControlName="intelligence" ngDefaultControl></ngb-progressbar>
+      <ngb-progressbar min="1" max="10" type="info" [value]="this.personnage.intelligence" formControlName="intelligence" ngDefaultControl></ngb-progressbar>
     </div>
     <div class="form-group col-sm-2">
-      <input  min="1" max="5" type="number" class="form-control" [(ngModel)]="this.personnage.intelligence" id="intelligence" formControlName="intelligence" ngDefaultControl>
+      <input  min="1" max="10" type="number" class="form-control" [(ngModel)]="this.personnage.intelligence" id="intelligence" formControlName="intelligence" ngDefaultControl>
     </div>
   </div>
   <label for="init">Init</label>
   <div class="form-row">
     <div class="form-group col-sm-10">
-      <ngb-progressbar   min="1" max="5" type="info" [value]="this.personnage.init" formControlName="init" ngDefaultControl></ngb-progressbar>
+      <ngb-progressbar   min="1" max="10" type="info" [value]="this.personnage.init" formControlName="init" ngDefaultControl></ngb-progressbar>
     </div>
     <div class="form-group col-sm-2">
-      <input  min="1" max="5" type="number" class="form-control" [(ngModel)]="this.personnage.init" id="init" formControlName="init" ngDefaultControl>
+      <input  min="1" max="10" type="number" class="form-control" [(ngModel)]="this.personnage.init" id="init" formControlName="init" ngDefaultControl>
     </div>
   </div>
-  <label for="inventaire">Inventaire</label>
-  <div class="form-row">
-    <div class="form-group col-sm-10">
-      <ngb-progressbar min="1" max="5" type="info" [value]="this.personnage.inventaire" formControlName="inventaire" ngDefaultControl></ngb-progressbar>
-    </div>
-    <div class="form-group col-sm-2">
-      <input  min="1" max="5" type="number" class="form-control"  [(ngModel)]="this.personnage.inventaire" id="inventaire" formControlName="inventaire" ngDefaultControl>
-    </div>
+  <div class="form-group">
+    <label for="inventaire">Inventaire</label>
+    <textarea class="form-control" id="inventaire" rows="3" formControlName="inventaire" placeholder="Donner l'inventaire du personnage"></textarea>
   </div>
-  <label for="equipement">Equipement</label>
-  <div class="form-row">
-    <div class="form-group col-sm-10">
-      <ngb-progressbar min="1" max="5" type="info" [value]="this.personnage.equipement" formControlName="equipement" ngDefaultControl></ngb-progressbar>
-    </div>
-    <div class="form-group col-sm-2">
-      <input min="1" max="5" type="number" class="form-control" [(ngModel)]="this.personnage.equipement" id="equipement" formControlName="equipement" ngDefaultControl>
-    </div>
+  <div class="form-group">
+    <label for="equipement">Equipement</label>
+    <textarea class="form-control" id="equipement" rows="3" formControlName="equipement" placeholder="Donner l'équipement du personnage"></textarea>
   </div>
   <div class="form-group">
     <label for="background">Background</label>
-    <input type="text" class="form-control" id="background" aria-describedby="Nom" formControlName="background" placeholder="Raconter l'histoire de son personnage">
+    <textarea class="form-control" id="background" rows="3" formControlName="background" placeholder="Raconter l'histoire de son personnage"></textarea>
   </div>
   <div class="form-group">
     <label for="race">Choisir sa race</label>
-      <select id="race" class="form-control" formControlName="race">
-        <option selected>Choisir....</option>
+      <select id="race" class="form-control" formControlName="race" placeholder="choisir la race">
         <option>Demi-elfe</option>
         <option>Demi-orque</option>
         <option>Elfe</option>
@@ -116,8 +104,7 @@
   </div>
   <div class="form-group">
     <label for="sexe">Choisir le sexe</label>
-    <select id="sexe" class="form-control" formControlName="sexe">
-      <option selected>Choisir....</option>
+    <select id="sexe" class="form-control" formControlName="sexe" placeholder="choisir le sexe">
       <option>Homme</option>
       <option>Femme</option>
       <option>Trans</option>
@@ -125,4 +112,14 @@
       <option>Asexué</option>
     </select>
   </div>
+  <div class="form-group">
+    <label for="avatar">Choisir son avatar</label>
+    <select id="avatar" class="form-control" formControlName="avatar" placeholder="choisir l'avatar">
+      <option selected>Choisir....</option>
+      <option>Homme</option>
+
+    </select>
+  </div>
+
+
 </form>
