@@ -7,31 +7,31 @@ import {HttpClient} from '@angular/common/http';
 @Injectable()
 export class PersonnageService {
 
-  baseurl = 'http://localhost:8090/jdr/personnages';
+  baseUrl = 'http://localhost:8090/jdr/personnages';
   constructor(private http: HttpClient) { }
 
   list(): Observable<any> {
-    return this.http.get(this.baseurl);
+    return this.http.get(this.baseUrl);
   }
 
   getOne(id: number): Observable<any> {
-    return this.http.get(this.baseurl + '' + id);
+    return this.http.get(this.baseUrl + '' + id);
   }
 
   add(personnage: Personnage): Observable<any>{
 
     let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
-    return this.http.post(this.baseurl, personnage,  {headers});
+    return this.http.post(this.baseUrl, personnage,  {headers});
   }
   update(personnage: Personnage): Observable<any>{
 
     let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
-    return this.http.put(this.baseurl, personnage,  {headers})
+    return this.http.put(this.baseUrl, personnage,  {headers})
   }
   delete(id: number ): Observable<any>{
 
-    return this.http.delete(this.baseurl + '' + id);
+    return this.http.delete(this.baseUrl + '' + id);
   }
 }

@@ -5,9 +5,10 @@ import {FormGroup} from '@angular/forms';
   templateUrl: './connect.component.html',
   styleUrls: ['./connect.component.css']
 })
+
 export class ConnectComponent implements OnInit {
 
-  incidentForm: FormGroup;
+  loginForm: FormGroup;
   formSubmitted = false;
 
   constructor() { }
