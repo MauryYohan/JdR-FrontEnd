@@ -7,19 +7,27 @@ import { ConnectComponent } from './connect/connect.component';
 import { PersonnageComponent } from './personnage/personnage.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {FormPersonnageComponent} from './form-personnage/form-personnage.component';
-import { SalleAttenteComponent } from './salle-attente/salle-attente.component';
-import {JoueurService} from './joueur.service';
+import {PersonnageService} from './personnage.service';
 import {HttpClientModule} from '@angular/common/http';
+<<<<<<< Updated upstream
 import { UtilisateurListComponent } from './utilisateur-list/utilisateur-list.component';
 import { PartieComponent } from './partie/partie.component';
 import {UtilisateurService} from './utilisateur.service';
 import {PersonnageService} from './personnage.service';
+=======
+import { ListPersonnageComponent } from './list-personnage/list-personnage.component';
+>>>>>>> Stashed changes
 
 const routes: Routes = [
   {path: '', redirectTo: 'connect', pathMatch: 'full'},
   {path: 'connect', component: ConnectComponent},
+<<<<<<< Updated upstream
   {path: 'createPerso', component: FormPersonnageComponent},
   {path: 'salle-attente', component: SalleAttenteComponent},
+=======
+  {path: 'createPerso', component: PersonnageComponent},
+  {path: 'formPerso', component: FormPersonnageComponent}
+>>>>>>> Stashed changes
 ];
 
 @NgModule({
@@ -28,9 +36,13 @@ const routes: Routes = [
     ConnectComponent,
     PersonnageComponent,
     FormPersonnageComponent,
+<<<<<<< Updated upstream
     SalleAttenteComponent,
     PartieComponent,
     UtilisateurListComponent
+=======
+    ListPersonnageComponent,
+>>>>>>> Stashed changes
   ],
   imports: [
     BrowserModule,
@@ -38,9 +50,14 @@ const routes: Routes = [
     HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
+    HttpClientModule,
     NgbModule.forRoot()
   ],
+<<<<<<< Updated upstream
   providers: [JoueurService, UtilisateurService, PersonnageService],
+=======
+  providers: [PersonnageService],
+>>>>>>> Stashed changes
   bootstrap: [AppComponent]
 })
 export class AppModule { }
