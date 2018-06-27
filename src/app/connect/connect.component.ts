@@ -17,30 +17,10 @@ export class ConnectComponent implements OnInit {
   ngOnInit() {
     this.loginForm = this.fb.group({
       //Declarer nos elements de formulaire
-      'dateCreation': ['',
+      'login': ['',
         Validators.compose([
           Validators.required])],
-      'description': ['',
-        Validators.compose([
-          Validators.required])],
-      'email': ['',
-        Validators.compose([
-          Validators.required,
-          Validators.min(10),
-          Validators.max(1000)])],
-      'isOpen': ['',
-        Validators.compose([
-          Validators.required])],
-      'level': ['',
-        Validators.compose([
-          Validators.required])],
-      'progress': ['',
-        Validators.compose([
-          Validators.required])],
-      'titre': ['',
-        Validators.compose([
-          Validators.required])],
-      'type': ['',
+      'password': ['',
         Validators.compose([
           Validators.required])]
     });
