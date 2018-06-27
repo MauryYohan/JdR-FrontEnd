@@ -14,8 +14,7 @@ export class Personnage {
     private _inventaire: string = null,
     private _background: string = null,
     private _race: string = '',
-    private _sexe: string = '',
-    private _partie: string = '',
+    private _sexe: string = ''
   ) { }
 
   get id(): number {
@@ -70,10 +69,6 @@ export class Personnage {
     return this._sexe;
   }
 
-  get partie(): string {
-    return this._partie;
-  }
-
   set id(value: number) {
     this._id = value;
   }
@@ -126,9 +121,6 @@ export class Personnage {
     this._sexe = value;
   }
 
-  set partie(value: string) {
-    this._partie = value;
-  }
 
   get defense(): number {
     return this._defense;
