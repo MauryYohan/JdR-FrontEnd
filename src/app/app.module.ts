@@ -7,12 +7,15 @@ import { ConnectComponent } from './connect/connect.component';
 import { PersonnageComponent } from './personnage/personnage.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {FormPersonnageComponent} from './form-personnage/form-personnage.component';
+import { SalleAttenteComponent } from './salle-attente/salle-attente.component';
+import {JoueurService} from './joueur.service';
 import {HttpClientModule} from '@angular/common/http';
+import { PartieComponent } from './partie/partie.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'connect', pathMatch: 'full'},
   {path: 'connect', component: ConnectComponent},
-  {path: 'createPerso', component: PersonnageComponent}
+  {path: 'salle-attente', component: SalleAttenteComponent},
 ];
 
 @NgModule({
@@ -20,7 +23,9 @@ const routes: Routes = [
     AppComponent,
     ConnectComponent,
     PersonnageComponent,
-    FormPersonnageComponent
+    FormPersonnageComponent,
+    SalleAttenteComponent,
+    PartieComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +35,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     NgbModule.forRoot()
   ],
-  providers: [],
+  providers: [JoueurService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

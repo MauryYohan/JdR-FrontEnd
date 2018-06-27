@@ -1,0 +1,11 @@
+
+  <div *ngFor="let j of joueurList">
+    {{j.id}}
+    {{j.login}}
+    {{j.mail}}
+    {{j.password}}
+    {{j.pseudo}}
+    <div *ngFor="let p of partieList">
+      {{p.id}}
+    </div>
+  </div>
