@@ -7,6 +7,7 @@ import { ConnectComponent } from './connect/connect.component';
 import { PersonnageComponent } from './personnage/personnage.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {FormPersonnageComponent} from './form-personnage/form-personnage.component';
+import {HttpClientModule} from '@angular/common/http';
 
 const routes: Routes = [
   {path: '', redirectTo: 'connect', pathMatch: 'full'},
@@ -24,6 +25,7 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
     NgbModule.forRoot()
