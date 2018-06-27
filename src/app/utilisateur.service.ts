@@ -6,31 +6,34 @@ import {Utilisateur} from './utilisateur';
 @Injectable()
 export class UtilisateurService {
 
-  baseUrl = 'http://localhost:8090/jdr/utilisateurs';
+  baseUrl = 'http://localhost:8090/jdr/utilisateurs/';
+  newUrl = '';
   constructor(private http: HttpClient) { }
 
-  list(): Observable<any> {
-    return this.http.get(this.baseUrl);
+  list(): Observable<Utilisateur>{
+    return this.http.get<Utilisateur>(this.baseUrl);
   }
 
-  getOne(id: number): Observable<any> {
-    return this.http.get(this.baseUrl + '' + id);
+  getOne(id: number): Observable<Utilisateur>{
+    return this.http.get<Utilisateur>(this.baseUrl+id);
+  }
+
+  getIdByLogin(login: string): Observable<Utilisateur>{
+    this.newUrl = this.baseUrl+login;
+    return this.http.get<Utilisateur>(this.newUrl)
+  }
+
+  remove(id: number): Observable<Utilisateur>{
+    return this.http.delete<Utilisateur>(this.baseUrl+id);
   }
 
   add(utilisateur: Utilisateur): Observable<any>{
-
-    let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-
-    return this.http.post(this.baseUrl, utilisateur,  {headers});
+    return this.http.post(this.baseUrl, utilisateur);
   }
   update(utilisateur: Utilisateur): Observable<any>{
-
-    let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-
-    return this.http.put(this.baseUrl, utilisateur,  {headers})
+    return this.http.put(this.baseUrl, utilisateur);
   }
-  delete(id: number ): Observable<any>{
-
-    return this.http.delete(this.baseUrl + '' + id);
+  del(id: number): Observable<any>{
+    return this.http.delete(this.baseUrl+id);
   }
 }

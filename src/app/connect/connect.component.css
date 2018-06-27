@@ -1,9 +1,8 @@
-#cardConnect {
+#jumbotronConnect {
   background-repeat: no-repeat;
   background-position: center;
   background-image: url("assets/table-jdr.jpg");
   background-attachment: fixed;
-  background: #000;
   /*
   filter: brightness(50%);
   -webkit-filter: brightness(50%);

@@ -10,11 +10,15 @@ import {FormPersonnageComponent} from './form-personnage/form-personnage.compone
 import { SalleAttenteComponent } from './salle-attente/salle-attente.component';
 import {JoueurService} from './joueur.service';
 import {HttpClientModule} from '@angular/common/http';
+import { UtilisateurListComponent } from './utilisateur-list/utilisateur-list.component';
 import { PartieComponent } from './partie/partie.component';
+import {UtilisateurService} from './utilisateur.service';
+import {PersonnageService} from './personnage.service';
 
 const routes: Routes = [
   {path: '', redirectTo: 'connect', pathMatch: 'full'},
   {path: 'connect', component: ConnectComponent},
+  {path: 'createPerso', component: FormPersonnageComponent},
   {path: 'salle-attente', component: SalleAttenteComponent},
 ];
 
@@ -25,7 +29,8 @@ const routes: Routes = [
     PersonnageComponent,
     FormPersonnageComponent,
     SalleAttenteComponent,
-    PartieComponent
+    PartieComponent,
+    UtilisateurListComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +40,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     NgbModule.forRoot()
   ],
-  providers: [JoueurService],
+  providers: [JoueurService, UtilisateurService, PersonnageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
