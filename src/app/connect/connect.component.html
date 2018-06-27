@@ -1,30 +1,42 @@
 <div class="row">
 
+  <div class="row">
+
+    <div class="col-12">
+      <div class="jumbotron" style=" padding-left: 375px; padding-right: 375px;">
+        <h1>Page de connexion</h1>
+      </div>
+    </div>
+
+  </div>
+  <div class="jumbotron" style=" padding-left: 375px; padding-right: 375px;">
+    <h1>Page de connexion</h1>
+  </div>
+
   <div class="col-2">
     <!-- Nothing here -->
   </div>
 
   <div class="col-8">
 
-    <div id="cardConnect" class="card" width="700" height="400">
+    <div id="cardConnect" class="card">
       <div class="card-body">
 
         <div class="row">
 
-          <div class="col-2"></div>
+          <div class="col-12">
 
-          <div class="col-8">
-
-            <form>
+            <form [formGroup]="loginForm" id="cardFormConnect">
               <div id="formConnect" class="form-group">
                 <label for="login" style=" color: red; font-weight: bold;">Login</label>
                 <input type="text" class="form-control" id="login" aria-describedby="loginHelp" placeholder="Enter login">
-                <small id="loginHelp" class="form-text" style=" font-weight:  bold;">Login oublié? Recuperez-le ici !</small>
+                <small id="loginHelp" class="form-text" style=" color: red; font-weight: bold;">Login oublié? Recuperez-le ici !</small>
               </div>
 
               <div class="form-group">
                 <label for="password" style=" color: red; font-weight: bold;">Password</label>
                 <input type="password" class="form-control" id="password" placeholder="Password">
+                <small id="passwordHelp" class="form-password" style=" color: red; font-weight: bold;">Mot de passe perdu? Changez-le ici !</small>
               </div>
 
               <button type="submit" class="btn btn-primary">Se connecter</button>
@@ -32,8 +44,6 @@
             </form>
 
           </div>
-
-          <div class="col-2"></div>
 
         </div>
       </div>

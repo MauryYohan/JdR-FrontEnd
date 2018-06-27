@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Personnage} from './personnage';
-import {HttpClient} from '@angular/common/http';
+import {Utilisateur} from './utilisateur';
 
 @Injectable()
-export class PersonnageService {
+export class UtilisateurService {
 
-  baseUrl = 'http://localhost:8090/jdr/personnages';
+  baseUrl = 'http://localhost:8090/jdr/utilisateurs';
   constructor(private http: HttpClient) { }
 
   list(): Observable<any> {
@@ -18,17 +17,17 @@ export class PersonnageService {
     return this.http.get(this.baseUrl + '' + id);
   }
 
-  add(personnage: Personnage): Observable<any>{
+  add(utilisateur: Utilisateur): Observable<any>{
 
     let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
-    return this.http.post(this.baseUrl, personnage,  {headers});
+    return this.http.post(this.baseUrl, utilisateur,  {headers});
   }
-  update(personnage: Personnage): Observable<any>{
+  update(utilisateur: Utilisateur): Observable<any>{
 
     let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
-    return this.http.put(this.baseUrl, personnage,  {headers})
+    return this.http.put(this.baseUrl, utilisateur,  {headers})
   }
   delete(id: number ): Observable<any>{
 
