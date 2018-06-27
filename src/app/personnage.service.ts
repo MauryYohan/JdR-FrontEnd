@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Personnage} from './personnage';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable()
 export class PersonnageService {
@@ -33,6 +34,4 @@ export class PersonnageService {
 
     return this.http.delete(this.baseurl + '' + id);
   }
-
-
 }
