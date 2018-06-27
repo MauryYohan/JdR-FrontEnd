@@ -1,3 +1,5 @@
+import {Joueur} from './joueur';
+
 export class Personnage {
 
   constructor(
@@ -14,7 +16,7 @@ export class Personnage {
     private _inventaire: string = null,
     private _background: string = null,
     private _race: string = '',
-    private _sexe: string = ''
+    private _sexe: string = '',
   ) { }
 
   get id(): number {
