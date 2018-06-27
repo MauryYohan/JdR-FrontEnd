@@ -10,6 +10,7 @@ import {FormPersonnageComponent} from './form-personnage/form-personnage.compone
 import { SalleAttenteComponent } from './salle-attente/salle-attente.component';
 import {JoueurService} from './joueur.service';
 import {HttpClientModule} from '@angular/common/http';
+import { UtilisateurListComponent } from './utilisateur-list/utilisateur-list.component';
 import { PartieComponent } from './partie/partie.component';
 
 const routes: Routes = [
@@ -26,6 +27,7 @@ const routes: Routes = [
     FormPersonnageComponent,
     SalleAttenteComponent,
     PartieComponent
+    UtilisateurListComponent
   ],
   imports: [
     BrowserModule,
