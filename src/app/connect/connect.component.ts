@@ -26,4 +26,15 @@ export class ConnectComponent implements OnInit {
     });
   }
 
+  submitForm(){
+    this.formSubmitted = true;
+    if(this.loginForm.valid){
+      console.log(this.loginForm.value);
+      this.us.getOne(this.loginForm.controls['login'].value).subscribe(
+        utilisateurFromDb => {
+          console.log(utilisateurFromDb);
+        })
+    }
+  }
+
 }

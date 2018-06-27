@@ -17,6 +17,10 @@ export class UtilisateurService {
     return this.http.get<Utilisateur>(this.baseUrl+id);
   }
 
+  getIdByLogin(login: string): Observable<any>{
+    return this.http.get<Utilisateur>(this.)
+  }
+
   remove(id: number): Observable<Utilisateur>{
     return this.http.delete<Utilisateur>(this.baseUrl+id);
   }
