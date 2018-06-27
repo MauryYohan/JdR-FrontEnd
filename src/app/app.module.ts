@@ -16,6 +16,7 @@ import { PartieComponent } from './partie/partie.component';
 const routes: Routes = [
   {path: '', redirectTo: 'connect', pathMatch: 'full'},
   {path: 'connect', component: ConnectComponent},
+  {path: 'createPerso', component: FormPersonnageComponent},
   {path: 'salle-attente', component: SalleAttenteComponent},
 ];
 
@@ -26,7 +27,7 @@ const routes: Routes = [
     PersonnageComponent,
     FormPersonnageComponent,
     SalleAttenteComponent,
-    PartieComponent
+    PartieComponent,
     UtilisateurListComponent
   ],
   imports: [
