@@ -18,11 +18,8 @@ import {JoueurService} from './joueur.service';
 import { AccueilComponent } from './accueil/accueil.component';
 import {Personnage} from './personnage';
 import {P} from '@angular/core/src/render3';
-import {PersonnageService} from './personnage.service';
-import {HttpClientModule} from '@angular/common/http';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { FormInscriptionComponent } from './form-inscription/form-inscription.component';
-import {UtilisateurService} from './utilisateur.service';
 const routes: Routes = [
   {path: '', redirectTo: 'accueil', pathMatch: 'full'},
   {path: 'connect', component: ConnectComponent},
@@ -30,7 +27,6 @@ const routes: Routes = [
   {path: 'salle-attente', component: SalleAttenteComponent},
   {path: 'formPerso', component: FormPersonnageComponent},
   {path: 'accueil', component: AccueilComponent},
-  {path: 'inscription', component: InscriptionComponent}
 ];
 
 @NgModule({
@@ -53,7 +49,6 @@ const routes: Routes = [
     HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
-    HttpClientModule,
     NgbModule.forRoot()
   ],
 

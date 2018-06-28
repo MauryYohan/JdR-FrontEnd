@@ -12,7 +12,7 @@ import {UtilisateurService} from '../utilisateur.service';
 export class FormInscriptionComponent implements OnInit {
 
   @Input() utilisateur: Utilisateur;
-  utilisateurform: FormGroup ;
+  inscriptionform: FormGroup ;
   formSubmitted = false;
   formtitle = 'Inscript';
 
@@ -25,13 +25,11 @@ export class FormInscriptionComponent implements OnInit {
       this.formtitle = 'Inscript';
     }
     console.log(this.utilisateur)
-    this.utilisateurform = this.fb.group({
-      'id': {value: this.utilisateur.id},
-      'mail': [{value: this.utilisateur.mail}, Validators.compose([Validators.required])],
-      'login': [{value: this.utilisateur.login}, Validators.compose([Validators.required])],
-      'motDePasse': [{value: this.utilisateur.motDePasse}, Validators.compose([Validators.required])],
-      'avatar': [{value: this.utilisateur.avatar}, [Validators.compose([Validators.required])]],
-      'pseudo': [{value: this.utilisateur.pseudo}, [Validators.compose([Validators.required])]]
+    this.inscriptionform = this.fb.group({
+      'id': [this.utilisateur.id],
+      'mail': [this.utilisateur.mail, Validators.compose([Validators.required, Validators.email])],
+      'motDePasse': [this.utilisateur.motDePasse, Validators.compose([Validators.required])],
+      'pseudo': [this.utilisateur.pseudo, [Validators.compose([Validators.required])]]
     });
   }
 

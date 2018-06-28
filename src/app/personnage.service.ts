@@ -25,16 +25,12 @@ export class PersonnageService {
   }
   update(personnage: Personnage): Observable<any> {
 
-    let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    let headers = new HttpHeaders({'Content-Type': 'application/json'});
 
-<<<<<<< Updated upstream
-    return this.http.put(this.baseUrl, personnage,  {headers});
-=======
-    return this.http.put(this.baseurl, personnage,  {headers});
->>>>>>> Stashed changes
+    return this.http.put(this.baseUrl, personnage, {headers});
   }
-  delete(id: number ): Observable<any> {
 
+  delete(id: number): Observable<any> {
     return this.http.delete(this.baseUrl + '' + id);
   }
 }
