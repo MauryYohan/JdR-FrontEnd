@@ -1,8 +1,9 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup, MaxLengthValidator, Validators} from '@angular/forms';
 import {Utilisateur} from '../utilisateur';
 import {Router} from '@angular/router';
 import {UtilisateurService} from '../utilisateur.service';
+import {Personnage} from '../personnage';
 
 @Component({
   selector: 'app-form-inscription',
@@ -14,23 +15,42 @@ export class FormInscriptionComponent implements OnInit {
   @Input() utilisateur: Utilisateur;
   inscriptionform: FormGroup ;
   formSubmitted = false;
-  formtitle = 'Inscript';
+  formtitle = 'Inscript'
+  display: boolean = false;
 
   constructor(private fb: FormBuilder, private router: Router, private us: UtilisateurService) { }
   @Output() output = new EventEmitter();
 
   ngOnInit() {
-    if (!this.utilisateur) { // si le formulaire contient un incident vide,
+    if (!this.utilisateur) {
       this.utilisateur = new Utilisateur();
-      this.formtitle = 'Inscript';
+      this.formtitle = 'AddInscription';
     }
-    console.log(this.utilisateur)
     this.inscriptionform = this.fb.group({
       'id': [this.utilisateur.id],
       'mail': [this.utilisateur.mail, Validators.compose([Validators.required, Validators.email])],
       'motDePasse': [this.utilisateur.motDePasse, Validators.compose([Validators.required])],
       'pseudo': [this.utilisateur.pseudo, [Validators.compose([Validators.required])]]
     });
+  }
+  onSubmit() {
+    console.log("submit");
+    this.formSubmitted = true;
+    if (this.inscriptionform.valid) {
+      console.log("valide");
+      console.log(this.inscriptionform.value);
+        this.us.add(this.inscriptionform.value).subscribe(utilisateur => {
+        console.log(utilisateur);
+          this.output.emit({'sev':'success', 'sum':'Add successfull!', 'detail': 'Incident ajouté:' + utilisateur.id
+
+          });
+       })
+      this.hideDialog();
+    }
+  }
+  hideDialog() {
+    this.display = false;
+    this.router.navigate(['/salle-attente']);
   }
 
 }

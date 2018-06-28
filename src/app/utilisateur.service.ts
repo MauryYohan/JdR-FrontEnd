@@ -18,8 +18,8 @@ export class UtilisateurService {
     return this.http.get<Utilisateur>(this.baseUrl + id);
   }
 
-  getIdByLogin(login: string): Observable<Utilisateur> {
-    this.newUrl = this.baseUrl + login;
+  getIdByPseudo(pseudo: string): Observable<Utilisateur> {
+    this.newUrl = this.baseUrl + pseudo;
     return this.http.get<Utilisateur>(this.newUrl);
   }
 
