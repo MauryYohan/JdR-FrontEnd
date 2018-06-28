@@ -17,19 +17,23 @@ export class PersonnageService {
     return this.http.get(this.baseUrl + '' + id);
   }
 
-  add(personnage: Personnage): Observable<any>{
+  add(personnage: Personnage): Observable<any> {
 
     let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
     return this.http.post(this.baseUrl, personnage,  {headers});
   }
-  update(personnage: Personnage): Observable<any>{
+  update(personnage: Personnage): Observable<any> {
 
     let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
+<<<<<<< Updated upstream
     return this.http.put(this.baseUrl, personnage,  {headers});
+=======
+    return this.http.put(this.baseurl, personnage,  {headers});
+>>>>>>> Stashed changes
   }
-  delete(id: number ): Observable<any>{
+  delete(id: number ): Observable<any> {
 
     return this.http.delete(this.baseUrl + '' + id);
   }
