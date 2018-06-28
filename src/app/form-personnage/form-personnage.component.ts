@@ -21,7 +21,7 @@ export class FormPersonnageComponent implements OnInit {
   @Output() output = new EventEmitter();
 
   ngOnInit() {
-    if(!this.personnage) { // si le formulaire contient un incident vide,
+    if(!this.personnage) { // si le formulaire contient un personnage vide,
       this.personnage = new Personnage();
       this.formtitle = 'Add';
     }else{
@@ -48,10 +48,8 @@ export class FormPersonnageComponent implements OnInit {
   }
 
   onSubmit(){
-    console.log("submit");
     this.formSubmitted = true;
     if(this.personnageform.valid) {
-      console.log("valide");
       if(this.personnageform.controls['id'].value>0){
         this.ps.update(this.personnageform.value).subscribe(
           personnage=>{
@@ -61,7 +59,7 @@ export class FormPersonnageComponent implements OnInit {
         console.log(this.personnageform.value)
         this.ps.add(this.personnageform.value).subscribe(personnage=>{
           console.log(personnage);
-          this.output.emit({'sev':'success', 'sum':'Add successfull!', 'detail': 'Incident ajouté:'+personnage.id
+          this.output.emit({'sev':'success', 'sum':'Add successfull!', 'detail': 'Personnage ajouté:'+personnage.id
 
           });
       })
@@ -83,7 +81,7 @@ export class FormPersonnageComponent implements OnInit {
     }
     hideDialog() {
       this.display = false;
-      this.router.navigate(['/createPerso']);
+      this.router.navigate(['/salle-attente']);
     }
 
 }

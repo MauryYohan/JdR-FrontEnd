@@ -1,1 +1,95 @@
-<p>Fiche perso</p>
+<form [formGroup]="personnageform" novalidate
+      (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="id"></label>
+    <input type="hidden" formControlName="id" id="id" aria-describedby="id" [value]="utilisateur.personnage.nom">
+  </div>
+  <div class="form-group">
+    <label for="nom" class="police">Nom</label>
+    <p id="nom" rows="3" formControlName="nom">name{{this.personnage.nom}}</p>
+  </div>
+  <div class="form-group">
+    <label for="classe" class="police">Classe</label>
+    <p class="p" id="classe" rows="3" formControlName="classe">Elfe{{this.personnage.classe}}</p>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-9">
+      <label for="pv" class="police">Points de vie</label><br>
+      <ngb-progressbar  min="1" type="info" [value]="this.personnage.pv" ngDefaultControl></ngb-progressbar>
+    </div>
+    <div class="form-group col-3">
+      <input  min="1" type="number" class="form-control"  [(ngModel)]="this.personnage.pv" id="pv" formControlName="pv" ngDefaultControl>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-9">
+      <label for="puissance" class="police">Puissance</label><br>
+      <ngb-progressbar min="1" max="10"  type="info" [value]="this.personnage.puissance" ngDefaultControl></ngb-progressbar>
+    </div>
+    <div class="form-group col-3">
+      <input min="1" max="10" type="number" class="form-control" [(ngModel)]="this.personnage.puissance" id="puissance" formControlName="puissance" ngDefaultControl>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-9">
+      <label for="defense" class="police">Défense</label><br>
+      <ngb-progressbar  min="1" max="10" type="info" [value]="this.personnage.defense"  ngDefaultControl></ngb-progressbar>
+    </div>
+    <div class="form-group col-3">
+      <input type="number" min="1" max="10" class="form-control" [(ngModel)]="this.personnage.defense" id="defense" formControlName="defense" ngDefaultControl>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-9">
+      <label for="esprit" class="police">Esprit</label><br>
+      <ngb-progressbar  min="1" max="10" type="info" [value]="this.personnage.esprit" ngDefaultControl></ngb-progressbar>
+    </div>
+    <div class="form-group col-3">
+      <input type="number"  min="1" max="10" class="form-control" [(ngModel)]="this.personnage.esprit" id="esprit" formControlName="esprit" ngDefaultControl>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-9">
+      <label for="intelligence" class="police">Intelligence</label><br>
+      <ngb-progressbar min="1" max="10" type="info" [value]="this.personnage.intelligence" ngDefaultControl></ngb-progressbar>
+    </div>
+    <div class="form-group col-3">
+      <input  min="1" max="10" type="number" class="form-control" [(ngModel)]="this.personnage.intelligence" id="intelligence" formControlName="intelligence" ngDefaultControl>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-9">
+      <label for="init" class="police">Init</label><br>
+      <ngb-progressbar   min="1" max="10" type="info" [value]="this.personnage.init" ngDefaultControl></ngb-progressbar>
+    </div>
+    <div class="form-group col-3">
+      <input  min="1" max="10" type="number" class="form-control" [(ngModel)]="this.personnage.init" id="init" formControlName="init" ngDefaultControl>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inventaire" class="police">Inventaire</label>
+    <p id="inventaire" rows="3" formControlName="inventaire">inventaire{{this.personnage.inventaire}}</p>
+  </div>
+  <div class="form-group">
+    <label for="equipement" class="police">Equipement</label>
+    <p id="equipement" rows="3" formControlName="equipement">equipement{{this.personnage.equipement}}</p>
+  </div>
+  <div class="form-group">
+    <label for="background" class="police">Background</label>
+    <p id="background" rows="3" formControlName="background">histoire du perso{{this.personnage.background}}</p>
+  </div>
+  <div class="form-group">
+    <label for="race" class="police">Race</label>
+    <p id="race" rows="3" formControlName="race">Gnome{{this.personnage.race}}</p>
+  </div>
+  <div class="form-group">
+    <label for="sexe" class="police">Sexe</label>
+    <p id="sexe" rows="3" formControlName="sexe">Homme{{this.personnage.sexe}}</p>
+  </div>
+  <div class="form-group">
+    <label for="id_joueur"></label>
+    <input type="hidden" formControlName="id" id="id_joueur" aria-describedby="id">
+  </div>
+</form>
+

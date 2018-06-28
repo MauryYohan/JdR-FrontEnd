@@ -1,6 +1,11 @@
-#partie{
+#partieDeroulement{
   position: relative;
   border:1px solid #f00;
   height: 90vh;
+  width: 100%;
 
+}
+#fichePerso {
+  text-align: justify;
+  overflow: auto;
 }
