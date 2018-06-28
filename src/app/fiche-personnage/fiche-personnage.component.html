@@ -5,17 +5,17 @@
     <input type="hidden" formControlName="id" id="id" aria-describedby="id" [value]="utilisateur.personnage.nom">
   </div>
   <div class="form-group">
-    <label for="nom">Nom</label>
+    <label for="nom" class="police">Nom</label>
     <p id="nom" rows="3" formControlName="nom">name{{this.personnage.nom}}</p>
   </div>
   <div class="form-group">
-    <label for="classe">Classe</label>
+    <label for="classe" class="police">Classe</label>
     <p class="p" id="classe" rows="3" formControlName="classe">Elfe{{this.personnage.classe}}</p>
   </div>
 
   <div class="form-row">
     <div class="form-group col-9">
-      <label for="pv">Points de vie</label><br>
+      <label for="pv" class="police">Points de vie</label><br>
       <ngb-progressbar  min="1" type="info" [value]="this.personnage.pv" ngDefaultControl></ngb-progressbar>
     </div>
     <div class="form-group col-3">
@@ -24,7 +24,7 @@
   </div>
   <div class="form-row">
     <div class="form-group col-9">
-      <label for="puissance">Puissance</label><br>
+      <label for="puissance" class="police">Puissance</label><br>
       <ngb-progressbar min="1" max="10"  type="info" [value]="this.personnage.puissance" ngDefaultControl></ngb-progressbar>
     </div>
     <div class="form-group col-3">
@@ -33,7 +33,7 @@
   </div>
   <div class="form-row">
     <div class="form-group col-9">
-      <label for="defense">Défense</label><br>
+      <label for="defense" class="police">Défense</label><br>
       <ngb-progressbar  min="1" max="10" type="info" [value]="this.personnage.defense"  ngDefaultControl></ngb-progressbar>
     </div>
     <div class="form-group col-3">
@@ -42,7 +42,7 @@
   </div>
   <div class="form-row">
     <div class="form-group col-9">
-      <label for="esprit">Esprit</label><br>
+      <label for="esprit" class="police">Esprit</label><br>
       <ngb-progressbar  min="1" max="10" type="info" [value]="this.personnage.esprit" ngDefaultControl></ngb-progressbar>
     </div>
     <div class="form-group col-3">
@@ -51,7 +51,7 @@
   </div>
   <div class="form-row">
     <div class="form-group col-9">
-      <label for="intelligence">Intelligence</label><br>
+      <label for="intelligence" class="police">Intelligence</label><br>
       <ngb-progressbar min="1" max="10" type="info" [value]="this.personnage.intelligence" ngDefaultControl></ngb-progressbar>
     </div>
     <div class="form-group col-3">
@@ -60,7 +60,7 @@
   </div>
   <div class="form-row">
     <div class="form-group col-9">
-      <label for="init">Init</label><br>
+      <label for="init" class="police">Init</label><br>
       <ngb-progressbar   min="1" max="10" type="info" [value]="this.personnage.init" ngDefaultControl></ngb-progressbar>
     </div>
     <div class="form-group col-3">
@@ -68,23 +68,23 @@
     </div>
   </div>
   <div class="form-group">
-    <label for="inventaire">Inventaire</label>
+    <label for="inventaire" class="police">Inventaire</label>
     <p id="inventaire" rows="3" formControlName="inventaire">inventaire{{this.personnage.inventaire}}</p>
   </div>
   <div class="form-group">
-    <label for="equipement">Equipement</label>
+    <label for="equipement" class="police">Equipement</label>
     <p id="equipement" rows="3" formControlName="equipement">equipement{{this.personnage.equipement}}</p>
   </div>
   <div class="form-group">
-    <label for="background">Background</label>
+    <label for="background" class="police">Background</label>
     <p id="background" rows="3" formControlName="background">histoire du perso{{this.personnage.background}}</p>
   </div>
   <div class="form-group">
-    <label for="race">Race</label>
+    <label for="race" class="police">Race</label>
     <p id="race" rows="3" formControlName="race">Gnome{{this.personnage.race}}</p>
   </div>
   <div class="form-group">
-    <label for="sexe">Sexe</label>
+    <label for="sexe" class="police">Sexe</label>
     <p id="sexe" rows="3" formControlName="sexe">Homme{{this.personnage.sexe}}</p>
   </div>
   <div class="form-group">

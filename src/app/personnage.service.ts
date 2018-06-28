@@ -18,7 +18,7 @@ export class PersonnageService {
     return this.http.get<Utilisateur>(this.baseUrl + id);
   }
 
-  getIdByLogin(login: string): Observable<Utilisateur> {
+  getIdByPseudo(login: string): Observable<Utilisateur> {
     this.newUrl = this.baseUrl + login;
     return this.http.get<Utilisateur>(this.newUrl);
   }
