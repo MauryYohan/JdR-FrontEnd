@@ -1,39 +1,27 @@
 <div class="row">
 
-  <div class="row">
-
-    <div class="col-12">
-      <div id="jumbotronConnect" class="jumbotron" style=" padding-left: 375px; padding-right: 375px;">
-        <h1>Page de connexion</h1>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="col-2">
-    <!-- Nothing here -->
-  </div>
-
-  <div class="col-8">
+  <div class="col-8" id="composant">
 
     <div class="card">
       <div class="card-body">
 
         <div class="row">
-
-          <div class="col-12">
+          <div class="col-4">
+          <img src="assets/imageConnexion/connexion.jpg">
+          </div>
+          <div class="col-8">
 
             <form [formGroup]="loginForm" id="cardFormConnect">
               <div id="formConnect" class="form-group">
-                <label for="login" style=" color: red; font-weight: bold;">Login</label>
-                <input type="text" class="form-control" id="login" aria-describedby="loginHelp" placeholder="Enter login">
-                <small id="loginHelp" class="form-text">Login oublié? Recuperez-le ici !</small>
+                <label for="email" style=" font-weight: bold;">Email</label>
+                <input type="text" class="form-control" id="email" aria-describedby="loginHelp" placeholder="Merci de renseigner votre email">
+                <!--<small id="loginHelp" class="form-text">Login oublié? Recuperez-le ici !</small>-->
               </div>
 
               <div class="form-group">
-                <label for="password" style=" color: red; font-weight: bold;">Password</label>
-                <input type="password" class="form-control" id="password" placeholder="Password">
-                <small id="passwordHelp" class="form-password">Mot de passe perdu? Changez-le ici !</small>
+                <label for="password" style=" font-weight: bold;">Mot de passe</label>
+                <input type="password" class="form-control" id="password" placeholder="Merci de renseigner votre mot de passe">
+                <small id="passwordHelp" class="form-password">Mot de passe perdu? Récupérez-le ici !</small>
               </div>
 
               <button type="submit" class="btn btn-primary">Se connecter</button>
@@ -47,9 +35,4 @@
     </div>
 
   </div>
-
-  <div class="col-2">
-    <!-- Nothing here -->
-  </div>
-
 </div>
