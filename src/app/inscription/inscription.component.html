@@ -1,0 +1,12 @@
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Formulaire d'inscription</h4>
+  </div>
+  <div class="modal-body">
+    <app-form-inscription></app-form-inscription>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-primary" (click)="c('Close click')">Valider</button>
+  </div>
+</ng-template>
+<button class="btn btn-outline-primary" (click)="openBackDropCustomClass(content)">Inscription</button>

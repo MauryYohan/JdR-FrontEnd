@@ -1,0 +1,12 @@
+#partie{
+  position: relative;
+  border:1px solid #f00;
+  height: 90vh;
+  width: 100%;
+
+}
+#fichePerso {
+  text-align: justify;
+  border: 1px solid black;
+  overflow: auto;
+}

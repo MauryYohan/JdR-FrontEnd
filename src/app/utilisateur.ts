@@ -7,20 +7,20 @@ export class Utilisateur {
     this._id = value;
   }
 
+  get pseudo(): string {
+    return this._pseudo;
+  }
+
+  set pseudo(value: string) {
+    this._pseudo = value;
+  }
+
   get mail(): string {
     return this._mail;
   }
 
   set mail(value: string) {
     this._mail = value;
-  }
-
-  get login(): string {
-    return this._login;
-  }
-
-  set login(value: string) {
-    this._login = value;
   }
 
   get motDePasse(): string {
@@ -38,21 +38,11 @@ export class Utilisateur {
   set avatar(value: string) {
     this._avatar = value;
   }
-
-  get pseudo(): string {
-    return this._pseudo;
-  }
-
-  set pseudo(value: string) {
-    this._pseudo = value;
-  }
-
-  constructor(private _id: number = null,
-              private _mail: string = null,
-              private _login: string = null,
-              private _motDePasse: string = null,
-              private _avatar: string = null,
-              private _pseudo: string = null
+  constructor(
+    private _id: number = 0,
+    private _mail: string = '',
+    private _pseudo: string = '',
+    private _motDePasse: string = '',
+    private _avatar: string = '',
   ) {}
-
 }

@@ -10,30 +10,31 @@ export class UtilisateurService {
   newUrl = '';
   constructor(private http: HttpClient) { }
 
-  list(): Observable<Utilisateur>{
+  list(): Observable<Utilisateur> {
     return this.http.get<Utilisateur>(this.baseUrl);
   }
 
-  getOne(id: number): Observable<Utilisateur>{
-    return this.http.get<Utilisateur>(this.baseUrl+id);
+  getOne(id: number): Observable<Utilisateur> {
+    return this.http.get<Utilisateur>(this.baseUrl + id);
   }
 
-  getIdByLogin(login: string): Observable<Utilisateur>{
-    this.newUrl = this.baseUrl+login;
-    return this.http.get<Utilisateur>(this.newUrl)
+  getIdByPseudo(pseudo: string): Observable<Utilisateur> {
+    this.newUrl = this.baseUrl + pseudo;
+    return this.http.get<Utilisateur>(this.newUrl);
   }
 
-  remove(id: number): Observable<Utilisateur>{
-    return this.http.delete<Utilisateur>(this.baseUrl+id);
+  remove(id: number): Observable<Utilisateur> {
+    return this.http.delete<Utilisateur>(this.baseUrl + id);
   }
 
-  add(utilisateur: Utilisateur): Observable<any>{
+  add(utilisateur: Utilisateur): Observable<any> {
     return this.http.post(this.baseUrl, utilisateur);
   }
-  update(utilisateur: Utilisateur): Observable<any>{
+  update(utilisateur: Utilisateur): Observable<any> {
     return this.http.put(this.baseUrl, utilisateur);
   }
-  del(id: number): Observable<any>{
-    return this.http.delete(this.baseUrl+id);
+  del(id: number): Observable<any> {
+    return this.http.delete(this.baseUrl + id);
   }
+
 }

@@ -21,30 +21,29 @@ export class FormPersonnageComponent implements OnInit {
   @Output() output = new EventEmitter();
 
   ngOnInit() {
-    if(!this.personnage) { // si le formulaire contient un incident vide,
+    if(!this.personnage) { // si le formulaire contient un personnage vide,
       this.personnage = new Personnage();
       this.formtitle = 'Add';
     }else{
       this.showDialog();
     }
-    console.log(this.personnage)
+
     this.personnageform = this.fb.group({
       'id': [this.personnage.id],
       'nom': [this.personnage.nom, Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(20)])],
-      'class': [this.personnage.classe, Validators.compose([Validators.required])],
+      'classe': [this.personnage.classe, Validators.compose([Validators.required])],
       'pv': [this.personnage.pv, Validators.compose([Validators.required, Validators.min(1)])],
-      'puissance': [this.personnage.puissance, [Validators.compose([Validators.required, Validators.min(1), Validators.max(5)])]],
-      'defense': [this.personnage.defense, [Validators.compose([Validators.required, Validators.min(1), Validators.max(5)])]],
-      'esprit': [this.personnage.esprit, [Validators.compose([Validators.required, Validators.min(1), Validators.max(5)])]],
-      'intelligence': [this.personnage.intelligence, [Validators.compose([Validators.required, Validators.min(1), Validators.max(5)])]],
-      'init': [this.personnage.init, [Validators.compose([Validators.required, Validators.min(1), Validators.max(5)])]],
+      'puissance': [this.personnage.puissance, [Validators.compose([Validators.required, Validators.min(1), Validators.max(10)])]],
+      'defense': [this.personnage.defense, [Validators.compose([Validators.required, Validators.min(1), Validators.max(10)])]],
+      'esprit': [this.personnage.esprit, [Validators.compose([Validators.required, Validators.min(1), Validators.max(10)])]],
+      'intelligence': [this.personnage.intelligence, [Validators.compose([Validators.required, Validators.min(1), Validators.max(10)])]],
+      'init': [this.personnage.init, [Validators.compose([Validators.required, Validators.min(1), Validators.max(10)])]],
       'equipement': [this.personnage.equipement],
       'inventaire': [this.personnage.inventaire],
       'background': [this.personnage.background],
       'race': [this.personnage.race, [Validators.compose([Validators.required])]],
       'sexe': [this.personnage.sexe, [Validators.compose([Validators.required])]],
-      'avatar': ["", [Validators.compose([Validators.required])]],
-      'id_joueur': ['']
+      //'id_joueur': ['']
     });
   }
 
@@ -57,8 +56,12 @@ export class FormPersonnageComponent implements OnInit {
             this.output.emit({'sev':'success', 'sum':'Update successfull!', 'detail': 'Personnage mis à jour:'+personnage.id});
           })
       }else{
+        console.log(this.personnageform.value)
         this.ps.add(this.personnageform.value).subscribe(personnage=>{
-          this.output.emit({'sev':'success', 'sum':'Add successfull!', 'detail': 'Incident ajouté:'+personnage.id});
+          console.log(personnage);
+          this.output.emit({'sev':'success', 'sum':'Add successfull!', 'detail': 'Personnage ajouté:'+personnage.id
+
+          });
       })
       }
       this.hideDialog();
@@ -78,7 +81,7 @@ export class FormPersonnageComponent implements OnInit {
     }
     hideDialog() {
       this.display = false;
-      this.router.navigate(['/creatPerso']);
+      this.router.navigate(['/salle-attente']);
     }
 
 }
