@@ -9,3 +9,11 @@
   text-align: justify;
   overflow: auto;
 }
+
+#de{
+  border: solid black 1px;
+}
+
+button{
+  alignment: center;
+}
