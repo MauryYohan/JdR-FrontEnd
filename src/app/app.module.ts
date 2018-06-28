@@ -20,6 +20,10 @@ import {Personnage} from './personnage';
 import {P} from '@angular/core/src/render3';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { FormInscriptionComponent } from './form-inscription/form-inscription.component';
+import {PartieService} from './partie.service';
+import {FichePersonnageComponent} from './fiche-personnage/fiche-personnage.component';
+import {DesComponent} from './des/des.component';
+import {ChatComponent} from './chat/chat.component';
 const routes: Routes = [
   {path: '', redirectTo: 'accueil', pathMatch: 'full'},
   {path: 'connect', component: ConnectComponent},
@@ -27,6 +31,9 @@ const routes: Routes = [
   {path: 'salle-attente', component: SalleAttenteComponent},
   {path: 'formPerso', component: FormPersonnageComponent},
   {path: 'accueil', component: AccueilComponent},
+  {path: 'inscription', component: FormInscriptionComponent},
+  {path: 'partie', component: PartieComponent},
+
 ];
 
 @NgModule({
@@ -41,7 +48,10 @@ const routes: Routes = [
     ListPersonnageComponent,
     AccueilComponent,
     InscriptionComponent,
-    FormInscriptionComponent
+    FormInscriptionComponent,
+    FichePersonnageComponent,
+    DesComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +62,7 @@ const routes: Routes = [
     NgbModule.forRoot()
   ],
 
-  providers: [JoueurService, UtilisateurService, PersonnageService],
+  providers: [JoueurService, UtilisateurService, PersonnageService, PartieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
