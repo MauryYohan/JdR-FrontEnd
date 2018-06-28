@@ -1,39 +1,29 @@
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
-import {Utilisateur} from './utilisateur';
+import {Personnage} from './personnage';
+import {Partie} from './partie';
 
 @Injectable()
 export class PersonnageService {
 
   baseUrl = 'http://localhost:8090/jdr/personnages/';
-  newUrl = '';
+
   constructor(private http: HttpClient) { }
 
-  list(): Observable<Utilisateur> {
-    return this.http.get<Utilisateur>(this.baseUrl);
+  list(): Observable<any>{
+    return this.http.get(this.baseUrl);
   }
-
-  getOne(id: number): Observable<Utilisateur> {
-    return this.http.get<Utilisateur>(this.baseUrl + id);
+  getOne(id:number): Observable<any>{
+    return this.http.get(this.baseUrl+'/'+id);
   }
-
-  getIdByPseudo(login: string): Observable<Utilisateur> {
-    this.newUrl = this.baseUrl + login;
-    return this.http.get<Utilisateur>(this.newUrl);
+  delete(id:number): Observable<any>{
+    return this.http.delete(this.baseUrl+'/'+id);
   }
-
-  remove(id: number): Observable<Utilisateur> {
-    return this.http.delete<Utilisateur>(this.baseUrl + id);
+  add(personnage: Personnage): Observable<any>{
+    return this.http.post(this.baseUrl, personnage);
   }
-
-  add(utilisateur: Utilisateur): Observable<any> {
-    return this.http.post(this.baseUrl, utilisateur);
-  }
-  update(utilisateur: Utilisateur): Observable<any> {
-    return this.http.put(this.baseUrl, utilisateur);
-  }
-  del(id: number): Observable<any> {
-    return this.http.delete(this.baseUrl + id);
+  update(personnage: Personnage): Observable<any>{
+    return this.http.put(this.baseUrl, personnage);
   }
 }

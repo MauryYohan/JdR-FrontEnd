@@ -6,7 +6,7 @@ import {Partie} from './partie';
 export class PartieService {
 
   baseUrl: string = "http://localhost:8090/jdr/parties";
-  partieList;
+
 
   constructor(private http: HttpClient){}
 
