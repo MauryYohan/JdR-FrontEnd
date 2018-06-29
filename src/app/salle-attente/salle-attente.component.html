@@ -1,13 +1,31 @@
-
-  <div *ngFor="let j of joueurList">
-    {{j.id}}
-    {{j.login}}
-    {{j.mail}}
-    {{j.password}}
-    {{j.pseudo}}
-    <div *ngFor="let p of partieList">
-      {{p.id}}
+<div class="container dashboard" *ngIf="joueur">
+  <div class="row">
+    <div class="dashboard-left col-sm-3">
+      <p class="phrase-connexion">
+        Bienvenue {{joueur.pseudo}}.
+      </p>
+      <img class="img-avatar" src="../../assets/imageCreation/flat-avatar.png">
+      <button class="btn btn-primary bouton-deco">Devenir MJ</button>
+      <button class="btn btn-primary bouton-deco">Déconnexion</button>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <a>Liste des parties en cours</a>
+        </li>
+        <li class="list-group-item">
+          <a>Listes de vos personnages</a>
+        </li>
+      </ul>
+    </div>
+    <div class="dashboard-section col-sm-9">
+      <h2>Listes de mes parties en cours</h2>
+      <div *ngFor="let p of joueur.listPartie">
+        <div class="block-partie">
+          <h4>{{p.titrePartie}}</h4>
+          <p>{{p.description}}</p>
+          <button class="btn btn-primary pull-right">Acceder à la partie</button>
+        </div>
+      </div>
+      <app-personnage></app-personnage>
     </div>
   </div>
-  <button type="button" class="btn btn-primary" [routerLink]="['/partie']">Rejoindre la Partie</button>
- <app-personnage></app-personnage>
+</div>

@@ -1,7 +1,16 @@
 p{
   border: solid black 1px;
 }
+<<<<<<< HEAD
 img{
+=======
+
+footer {
+  vertical-align: baseline;
+}
+
+img {
+>>>>>>> master
   margin-top: 50px;
   margin-bottom: 100px;
 }

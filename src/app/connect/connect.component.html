@@ -14,13 +14,13 @@
             <form [formGroup]="loginForm" id="cardFormConnect" (ngSubmit)="submitForm()">
               <div id="formConnect" class="form-group">
                 <label for="email" style=" font-weight: bold;">Email</label>
-                <input type="text" class="form-control" id="email" aria-describedby="loginHelp" placeholder="Merci de renseigner votre email">
+                <input type="text" class="form-control" id="email" formControlName="email" aria-describedby="loginHelp" placeholder="Merci de renseigner votre email">
                 <!--<small id="loginHelp" class="form-text">Login oublié? Recuperez-le ici !</small>-->
               </div>
 
               <div class="form-group">
                 <label for="password" style=" font-weight: bold;">Mot de passe</label>
-                <input type="password" class="form-control" id="password" placeholder="Merci de renseigner votre mot de passe">
+                <input type="password" class="form-control" id="password" formControlName="password" placeholder="Merci de renseigner votre mot de passe">
                 <small id="passwordHelp" class="form-password">Mot de passe perdu? Récupérez-le ici !</small>
               </div>
 
