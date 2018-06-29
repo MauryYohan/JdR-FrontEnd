@@ -2,11 +2,11 @@
       (ngSubmit)="onSubmit()">
   <div>
     <label for="nom" class="police">Nom</label>
-    <p id="nom" rows="3" formControlName="nom" ngDefaultControl >{{personnage.nom}}</p>
+    <p id="nom" rows="3">{{personnage.nom}}</p>
   </div>
   <div>
     <label for="classe" class="police">Classe</label>
-    <p class="p" id="classe" rows="3" formControlName="classe" ngDefaultControl>{{personnage.classe}}</p>
+    <p class="p" id="classe" rows="3">{{personnage.classe}}</p>
   </div>
 
   <div class="form-row">
@@ -63,25 +63,25 @@
       <input  min="1" max="10" type="number" class="form-control" [(ngModel)]="personnage.init" id="init" formControlName="init" ngDefaultControl>
     </div>
   </div>
+  <label for="inventaire" class="police">Inventaire</label>
   <div>
-    <label for="inventaire" class="police">Inventaire</label>
-    <p id="inventaire" rows="3" formControlName="inventaire" ngDefaultControl>inventaire{{personnage.inventaire}}</p>
+    <textarea id="inventaire" formControlName="inventaire" ngDefaultControl style="width: 100%; height: 50%;">{{personnage.inventaire}}</textarea>
   </div>
+  <label for="equipement" class="police">Equipement</label>
   <div>
-    <label for="equipement" class="police">Equipement</label>
-    <textarea id="equipement" rows="3" formControlName="equipement" ngDefaultControl>equipement{{personnage.equipement}}</textarea>
+    <textarea id="equipement" formControlName="equipement" ngDefaultControl style="width: 100%; height: 50%;">{{personnage.equipement}}</textarea>
   </div>
   <div>
     <label for="background" class="police">Background</label>
-    <p id="background" rows="3">histoire du perso{{personnage.background}}</p>
+    <p id="background" rows="3">{{personnage.background}}</p>
   </div>
   <div>
     <label for="race" class="police">Race</label>
-    <p id="race" rows="3">Gnome{{personnage.race}}</p>
+    <p id="race" rows="3">{{personnage.race}}</p>
   </div>
   <div>
     <label for="sexe" class="police">Sexe</label>
-    <p id="sexe" rows="3">Homme{{personnage.sexe}}</p>
+    <p id="sexe" rows="3">{{personnage.sexe}}</p>
   </div>
   <div>
     <label for="id_joueur"></label>

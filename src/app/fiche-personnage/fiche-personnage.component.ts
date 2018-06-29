@@ -23,8 +23,6 @@ export class FichePersonnageComponent implements OnInit {
 
         this.personnageform = this.fb.group({
           'id': [this.personnage.id],
-          'nom': this.personnage.nom,
-          'classe': [this.personnage.classe, Validators.compose([Validators.required])],
           'pv': [this.personnage.pv, Validators.compose([Validators.required, Validators.min(1)])],
           'puissance': [this.personnage.puissance, [Validators.compose([Validators.required, Validators.min(1), Validators.max(10)])]],
           'defense': [this.personnage.defense, [Validators.compose([Validators.required, Validators.min(1), Validators.max(10)])]],
@@ -33,10 +31,6 @@ export class FichePersonnageComponent implements OnInit {
           'init': [this.personnage.init, [Validators.compose([Validators.required, Validators.min(1), Validators.max(10)])]],
           'equipement': [this.personnage.equipement],
           'inventaire': [this.personnage.inventaire],
-          'background': [this.personnage.background],
-          'race': [this.personnage.race, [Validators.compose([Validators.required])]],
-          'sexe': [this.personnage.sexe, [Validators.compose([Validators.required])]],
-          //'id_joueur': ['']
         });
       }
 }

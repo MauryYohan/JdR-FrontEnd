@@ -1,8 +1,7 @@
 #partieDeroulement{
   position: relative;
   border:1px solid #f00;
-  height: 90vh;
-  width: 100%;
+  height: 80vh;
 
 }
 #fichePerso {
