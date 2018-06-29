@@ -11,7 +11,7 @@
           </div>
           <div class="col-8">
 
-            <form [formGroup]="loginForm" id="cardFormConnect">
+            <form [formGroup]="loginForm" id="cardFormConnect" (ngSubmit)="submitForm()">
               <div id="formConnect" class="form-group">
                 <label for="email" style=" font-weight: bold;">Email</label>
                 <input type="text" class="form-control" id="email" aria-describedby="loginHelp" placeholder="Merci de renseigner votre email">
