@@ -29,7 +29,7 @@ export class FormInscriptionComponent implements OnInit {
     this.inscriptionform = this.fb.group({
       'id': [this.utilisateur.id],
       'mail': [this.utilisateur.mail, Validators.compose([Validators.required, Validators.email])],
-      'motDePasse': [this.utilisateur.motDePasse, Validators.compose([Validators.required])],
+      'motDePasse': [this.utilisateur.motDePasse, Validators.compose([Validators.required, Validators.minLength(6)])],
       'pseudo': [this.utilisateur.pseudo, [Validators.compose([Validators.required])]]
     });
   }
@@ -50,7 +50,7 @@ export class FormInscriptionComponent implements OnInit {
   }
   hideDialog() {
     this.display = false;
-    this.router.navigate(['/salle-attente']);
+    this.router.navigate(['/connect']);
   }
 
 }
