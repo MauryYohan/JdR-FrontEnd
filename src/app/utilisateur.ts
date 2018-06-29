@@ -43,6 +43,6 @@ export class Utilisateur {
     private _mail: string = '',
     private _pseudo: string = '',
     private _motDePasse: string = '',
-    private _avatar: string = '',
+    private _avatar: string = ''
   ) {}
 }

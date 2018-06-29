@@ -15,7 +15,7 @@ export class UtilisateurService {
   }
 
   getOne(id: number): Observable<Utilisateur> {
-    return this.http.get<Utilisateur>(this.baseUrl + id);
+    return this.http.get<Utilisateur>(this.baseUrl + "/id/" + id);
   }
 
   getOneByMail(email: string):Observable<Utilisateur> {
@@ -23,7 +23,7 @@ export class UtilisateurService {
   }
 
   getOneByPseudo(pseudo: string):Observable<Utilisateur> {
-    return this.http.get<Utilisateur>(this.baseUrl + pseudo);
+    return this.http.get<Utilisateur>(this.baseUrl + "/pseudo/" + pseudo);
   }
 
   remove(id: number): Observable<Utilisateur> {

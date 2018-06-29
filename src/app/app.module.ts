@@ -24,6 +24,7 @@ import {PartieService} from './partie.service';
 import {FichePersonnageComponent} from './fiche-personnage/fiche-personnage.component';
 import {DesComponent} from './des/des.component';
 import {ChatComponent} from './chat/chat.component';
+import { UtilisateurComponent } from './utilisateur/utilisateur.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'accueil', pathMatch: 'full'},
@@ -34,7 +35,7 @@ const routes: Routes = [
   {path: 'formPerso', component: FormPersonnageComponent},
   {path: 'accueil', component: AccueilComponent},
   {path: 'partie/:id', component: PartieComponent},
-
+  {path: 'listUser', component: UtilisateurListComponent}
 ];
 
 @NgModule({
@@ -52,7 +53,8 @@ const routes: Routes = [
     FormInscriptionComponent,
     FichePersonnageComponent,
     DesComponent,
-    ChatComponent
+    ChatComponent,
+    UtilisateurComponent
   ],
   imports: [
     BrowserModule,
