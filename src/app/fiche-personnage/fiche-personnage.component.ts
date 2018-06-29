@@ -3,7 +3,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Personnage} from '../personnage';
 import {Router} from '@angular/router';
 import {PersonnageService} from '../personnage.service';
-import {Utilisateur} from '../utilisateur';
+
 
 @Component({
   selector: 'app-fiche-personnage',
@@ -12,20 +12,28 @@ import {Utilisateur} from '../utilisateur';
 })
 export class FichePersonnageComponent implements OnInit {
 
-  @Input() personnage: Personnage;
+  personnage: Personnage ;
   personnageform: FormGroup ;
   formSubmitted = false;
   formtitle='Add';
   display: boolean = false;
-  utilisateur : Utilisateur
 
   constructor(private fb: FormBuilder, private router: Router, private ps: PersonnageService) { }
   @Output() output = new EventEmitter();
 
   ngOnInit() {
 
+    // Chercher personnage en bdd
+
+
+    if(!this.personnage) { // si le formulaire contient un personnage vide,
+      this.formtitle = 'getOne';
+    }else{
+      this.showDialog();
+    }
+
     this.personnageform = this.fb.group({
-      'id': [this.utilisateur.id],
+        'id': [this.personnage.id],
       'nom': [this.personnage.nom],
       'classe': [this.personnage.classe],
       'pv': [this.personnage.pv],
@@ -56,7 +64,7 @@ export class FichePersonnageComponent implements OnInit {
   }
 
   showAddDialog(){
-    this.formtitle='Add';
+    this.formtitle='getOne';
     this.personnage = new Personnage();
     this.showDialog();
   }

@@ -23,6 +23,11 @@ export class UtilisateurService {
     return this.http.get<Utilisateur>(this.newUrl);
   }
 
+  getIdByEmail(email: string): Observable<Utilisateur> {
+    this.newUrl = this.baseUrl + email;
+    return this.http.get<Utilisateur>(this.newUrl);
+  }
+
   remove(id: number): Observable<Utilisateur> {
     return this.http.delete<Utilisateur>(this.baseUrl + id);
   }

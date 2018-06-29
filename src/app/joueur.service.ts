@@ -3,9 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Joueur} from './joueur';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class JoueurService {
 
   baseUrl: string = "http://localhost:8090/jdr/joueurs";

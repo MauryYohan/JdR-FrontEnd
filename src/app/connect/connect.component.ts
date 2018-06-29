@@ -12,11 +12,11 @@ export class ConnectComponent implements OnInit {
   loginForm: FormGroup;
   formSubmitted = false;
 
-  constructor(private fb: FormBuilder, private us : UtilisateurService) { }
+  constructor(private fb: FormBuilder, private us: UtilisateurService) { }
 
   ngOnInit() {
     this.loginForm = this.fb.group({
-      //Declarer nos elements de formulaire
+      // Declarer nos elements de formulaire
       'login': ['',
         Validators.compose([
           Validators.required])],
@@ -26,14 +26,14 @@ export class ConnectComponent implements OnInit {
     });
   }
 
-  submitForm(){
+  submitForm() {
     this.formSubmitted = true;
-    if(this.loginForm.valid){
+    if  (this.loginForm.valid) {
       console.log(this.loginForm.value);
-      this.us.getOne(this.loginForm.controls['login'].value).subscribe(
+      this.us.getOne(this.loginForm.controls['email'].value).subscribe(
         utilisateurFromDb => {
           console.log(utilisateurFromDb);
-        })
+        } );
     }
   }
 

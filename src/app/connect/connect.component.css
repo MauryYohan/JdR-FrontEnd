@@ -1,11 +1,5 @@
-#jumbotronConnect {
-
-  background-position: center;
-  background-attachment: fixed;
-  /*
-  filter: brightness(50%);
-  -webkit-filter: brightness(50%);
-  -moz-filter: brightness(50%);
-  -o-filter: brightness(50%);
-  */
+#composant {
+margin: auto;
+  margin-top: 100px;
 }
+

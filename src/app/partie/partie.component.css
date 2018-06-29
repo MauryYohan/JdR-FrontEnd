@@ -1,4 +1,4 @@
-#partie{
+#partieDeroulement{
   position: relative;
   border:1px solid #f00;
   height: 90vh;
@@ -7,6 +7,13 @@
 }
 #fichePerso {
   text-align: justify;
-  border: 1px solid black;
   overflow: auto;
+}
+
+#de{
+  border: solid black 1px;
+}
+
+button{
+  alignment: center;
 }
