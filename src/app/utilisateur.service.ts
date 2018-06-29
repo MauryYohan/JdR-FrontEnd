@@ -22,6 +22,10 @@ export class UtilisateurService {
     return this.http.get<Utilisateur>(this.baseUrl + email);
   }
 
+  getOneByPseudo(pseudo: string):Observable<Utilisateur> {
+    return this.http.get<Utilisateur>(this.baseUrl + pseudo);
+  }
+
   remove(id: number): Observable<Utilisateur> {
     return this.http.delete<Utilisateur>(this.baseUrl + id);
   }
