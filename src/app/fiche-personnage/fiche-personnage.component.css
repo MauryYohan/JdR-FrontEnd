@@ -5,3 +5,10 @@ p{
 .police{
   font-family: OCR A Std, monospace, sans-serif;
 }
+input{
+  padding: 5px;
+  text-align: center;
+}
+label{
+  margin: 0;
+}

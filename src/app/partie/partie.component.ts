@@ -19,9 +19,7 @@ export class PartieComponent implements OnInit {
        this.idPerso = params['id'];
       })
     this.personnageService.getOne(this.idPerso).subscribe(pp => {
-        console.log('*****'+this.idPerso);
         this.personnage = pp;
-        console.log('*****'+pp);
       },
       () => {
         console.log('error');
@@ -30,7 +28,6 @@ export class PartieComponent implements OnInit {
         console.log('complete');
       });
     this.personnageService.list().subscribe(leList => {
-      console.log('///'+leList);
     });
 
   }

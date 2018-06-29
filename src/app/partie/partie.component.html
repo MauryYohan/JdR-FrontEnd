@@ -1,17 +1,16 @@
 
 <div class="row" id="partieDeroulement">
-    <div class="col-lg-4" id="fichePerso">
-      <app-fiche-personnage></app-fiche-personnage>
+    <div class="col-lg-3" id="fichePerso">
+      <app-fiche-personnage *ngIf="personnage !== undefinedx" [personnage]="personnage"></app-fiche-personnage>
     </div>
-    <div class="col-lg-6" id="partie" style="text-align: center">
-      <div id="AvatarMJ">
+    <div class="col-lg-7" id="partie" style="text-align: center">
+      <div id="AvatarMJ" style="margin-bottom: 20px; margin-top: 30px">
         <img src="assets/imagePartie/avatar1.jpg" alt="MJ" class="rounded">
       </div>
-      <div class="row">
-        <div class="col-12">
+        <div class="col-12" style="margin-bottom: 50px" >
           <img src="assets/imagePartie/carte.jpg" class="img" alt="carte"/>
         </div>
-          <div class="row">
+          <div class="row" style="text-align: center">
             <div class="col-3">
               <img src="assets/imagePartie/avatar1.jpg" alt="..." class="rounded">
             </div>
@@ -24,11 +23,7 @@
             <div class="col-3">
               <img src="assets/imagePartie/avatar1.jpg" alt="..." class="rounded">
             </div>
-          </div>
-      </div>
-      <app-fiche-personnage></app-fiche-personnage>
-    </div>
-    <div class="col-lg-6" id="partie">
+        </div>
     </div>
     <div class="col" id="de">
       <app-des></app-des>
