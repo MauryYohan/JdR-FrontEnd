@@ -24,14 +24,15 @@ import {PartieService} from './partie.service';
 import {FichePersonnageComponent} from './fiche-personnage/fiche-personnage.component';
 import {DesComponent} from './des/des.component';
 import {ChatComponent} from './chat/chat.component';
+
 const routes: Routes = [
   {path: '', redirectTo: 'accueil', pathMatch: 'full'},
   {path: 'connect', component: ConnectComponent},
+  {path: 'inscription', component: FormInscriptionComponent},
   {path: 'createPerso', component: PersonnageComponent},
   {path: 'salle-attente', component: SalleAttenteComponent},
   {path: 'formPerso', component: FormPersonnageComponent},
   {path: 'accueil', component: AccueilComponent},
-  {path: 'inscription', component: FormInscriptionComponent},
   {path: 'partie', component: PartieComponent},
 
 ];
