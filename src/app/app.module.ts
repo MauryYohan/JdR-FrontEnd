@@ -30,10 +30,10 @@ const routes: Routes = [
   {path: 'connect', component: ConnectComponent},
   {path: 'inscription', component: FormInscriptionComponent},
   {path: 'createPerso', component: PersonnageComponent},
-  {path: 'salle-attente', component: SalleAttenteComponent},
+  {path: 'salle-attente/:id', component: SalleAttenteComponent},
   {path: 'formPerso', component: FormPersonnageComponent},
   {path: 'accueil', component: AccueilComponent},
-  {path: 'partie', component: PartieComponent},
+  {path: 'partie/:id', component: PartieComponent},
 
 ];
 
