@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DesComponent implements OnInit {
 
+  nb:number = 0;
+
   constructor() { }
 
   ngOnInit() {
@@ -15,7 +17,7 @@ export class DesComponent implements OnInit {
   }
 
   randomD(number){
-  Math.floor((Math.random() * number) + 1);
+  this.nb = Math.floor((Math.random() * number) + 1);
   }
 
 

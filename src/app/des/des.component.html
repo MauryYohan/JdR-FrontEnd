@@ -4,16 +4,15 @@
       <img src="assets/imageDes/des.jpg" class="img" alt="image de dés"/>
     </div>
   </div>
-  <div class="row">
-    <div class="col-6">
-      <div id="desSix" class="form-group">
-        <p>Doit afficher Résultat dés 6</p>
-      </div>
+  <p class="resultat">{{nb}}</p>
+  <div class="buttons">
+    <div id="desSix">
+      <button type="button" class="btn btn-dark" (click)="randomD(6)" style="text-align: justify">Lancer le dé 6</button>
     </div>
-    <div class="col-6">
-      <div id="desVingt" class="form-group">
-        <p>{{this.valueOf(button)}}</p>
-      </div>
+    <div id="desVingt">
+      <button type="button" class="btn btn-dark" (click)="randomD(20)" style="text-align: justify">Lancer le dé 20</button>
     </div>
   </div>
-  <button type="button" class="btn btn-dark" (click)="randomD(6)" style="text-align: justify">Lancer les dés</button>
+
+
+
