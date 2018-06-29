@@ -15,5 +15,10 @@
 }
 
 button{
-  alignment: center;
+  margin: 0 auto;
 }
+  /*#AvatarMJ{
+  margin-top:20px;
+  margin-left: 180px;
+  margin-right: 150px;
+}*/

@@ -12,7 +12,7 @@ import {PersonnageService} from '../personnage.service';
 })
 export class FichePersonnageComponent implements OnInit {
 
-  @Input() personnage: Personnage;
+  personnage: Personnage ;
   personnageform: FormGroup ;
   formSubmitted = false;
   formtitle='Add';
@@ -22,6 +22,10 @@ export class FichePersonnageComponent implements OnInit {
   @Output() output = new EventEmitter();
 
   ngOnInit() {
+
+    // Chercher personnage en bdd
+
+
     if(!this.personnage) { // si le formulaire contient un personnage vide,
       this.formtitle = 'getOne';
     }else{
@@ -29,7 +33,7 @@ export class FichePersonnageComponent implements OnInit {
     }
 
     this.personnageform = this.fb.group({
-      'id': [this.personnage.id],
+        'id': [this.personnage.id],
       'nom': [this.personnage.nom],
       'classe': [this.personnage.classe],
       'pv': [this.personnage.pv],
