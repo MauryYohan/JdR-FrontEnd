@@ -1,0 +1,41 @@
+
+.btn-flex{
+  display: flex!important;
+}
+.dashboard-left{
+  background-color: #ff413e;
+  height: 100vh;
+}
+.phrase-connexion{
+  text-align: center;
+  margin-top: 1rem;
+}
+.img-avatar{
+  display: block;
+  margin: 0 auto;
+}
+.bouton-deco{
+  display: block;
+  margin: 1rem auto;
+}
+.dashboard .col-sm-3{
+  padding: 0!important;
+}
+.dashboard ul li{
+  background-color: #ff413e;
+  text-align: center;
+}
+.dashboard ul li:hover{
+  background-color: #007bff;
+}
+.dashboard-section h2{
+  text-align: center;
+  margin-top: 1rem;
+}
+.block-partie{
+  border: 1px solid black;
+  padding: 1rem;
+}
+.block-partie button{
+  margin-left: 80%;
+}

@@ -20,10 +20,7 @@ export class SalleAttenteComponent implements OnInit {
       params => {
         if(params['id'])
           this.joueurService.getOne(params['id']).subscribe(joueur=> this.joueur = joueur);
-        else {
-          this.joueurService.list().subscribe(joueurs => this.joueurList = joueurs);
-          this.partieService.list().subscribe(parties => this.partieList = parties);
-        }
+
       })
 
   }
