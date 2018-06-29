@@ -1,8 +1,9 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Component, Input, OnInit} from '@angular/core';
 import {Personnage} from '../personnage';
-import {Router} from '@angular/router';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {ActivatedRoute, Router} from '@angular/router';
 import {PersonnageService} from '../personnage.service';
+
 
 
 @Component({
@@ -12,68 +13,37 @@ import {PersonnageService} from '../personnage.service';
 })
 export class FichePersonnageComponent implements OnInit {
 
-  personnage: Personnage ;
-  personnageform: FormGroup ;
-  formSubmitted = false;
-  formtitle='Add';
-  display: boolean = false;
 
-  constructor(private fb: FormBuilder, private router: Router, private ps: PersonnageService) { }
-  @Output() output = new EventEmitter();
+  @Input()personnage: Personnage;
+  personnageform: FormGroup ;
+
+  constructor(private fb: FormBuilder, private router: Router, private ps: PersonnageService, private personnageservice: PersonnageService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    // this.route.params.subscribe(
+    //   params => {
+    //     if (params['id']) {
+    //       this.personnageservice.getOne(params['id']).subscribe(personnage => this.personnage = personnage);
+    //     }
+    //
+    //    });
 
-    // Chercher personnage en bdd
-
-
-    if(!this.personnage) { // si le formulaire contient un personnage vide,
-      this.formtitle = 'getOne';
-    }else{
-      this.showDialog();
-    }
-
-    this.personnageform = this.fb.group({
-        'id': [this.personnage.id],
-      'nom': [this.personnage.nom],
-      'classe': [this.personnage.classe],
-      'pv': [this.personnage.pv],
-      'puissance': [this.personnage.puissance, [Validators.compose([Validators.required, Validators.min(1), Validators.max(10)])]],
-      'defense': [this.personnage.defense],
-      'esprit': [this.personnage.esprit],
-      'intelligence': [this.personnage.intelligence],
-      'init': [this.personnage.init],
-      'equipement': [this.personnage.equipement],
-      'inventaire': [this.personnage.inventaire],
-      'background': [this.personnage.background],
-      'race': [this.personnage.race],
-      'sexe': [this.personnage.sexe],
-      //'id_joueur': ['']
-    });
-  }
-
-  onSubmit(){
-    this.formSubmitted = true;
-    if(this.personnageform.valid) {
-      if(this.personnageform.controls['id'].value>0){
-        this.ps.update(this.personnageform.value).subscribe(
-          personnage=>{
-            this.output.emit({'sev':'success', 'sum':'Update successfull!', 'detail': 'Personnage mis à jour:'+personnage.id});
-          })
+        this.personnageform = this.fb.group({
+          'id': [this.personnage.id],
+          'nom': this.personnage.nom,
+          'classe': [this.personnage.classe, Validators.compose([Validators.required])],
+          'pv': [this.personnage.pv, Validators.compose([Validators.required, Validators.min(1)])],
+          'puissance': [this.personnage.puissance, [Validators.compose([Validators.required, Validators.min(1), Validators.max(10)])]],
+          'defense': [this.personnage.defense, [Validators.compose([Validators.required, Validators.min(1), Validators.max(10)])]],
+          'esprit': [this.personnage.esprit, [Validators.compose([Validators.required, Validators.min(1), Validators.max(10)])]],
+          'intelligence': [this.personnage.intelligence, [Validators.compose([Validators.required, Validators.min(1), Validators.max(10)])]],
+          'init': [this.personnage.init, [Validators.compose([Validators.required, Validators.min(1), Validators.max(10)])]],
+          'equipement': [this.personnage.equipement],
+          'inventaire': [this.personnage.inventaire],
+          'background': [this.personnage.background],
+          'race': [this.personnage.race, [Validators.compose([Validators.required])]],
+          'sexe': [this.personnage.sexe, [Validators.compose([Validators.required])]],
+          //'id_joueur': ['']
+        });
       }
-    }
-  }
-
-  showAddDialog(){
-    this.formtitle='getOne';
-    this.personnage = new Personnage();
-    this.showDialog();
-  }
-
-  showDialog() {
-    this.formSubmitted = false;
-    this.display = true;
-    console.log(this.personnage);
-  }
-
-
 }
