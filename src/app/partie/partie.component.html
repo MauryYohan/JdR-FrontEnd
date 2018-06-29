@@ -1,16 +1,10 @@
 
 <div class="row" id="partieDeroulement">
     <div class="col-lg-4" id="fichePerso">
-      <app-fiche-personnage [personnage]=""></app-fiche-personnage>
+      <app-fiche-personnage *ngIf="personnage !== undefinedx" [personnage]="personnage"></app-fiche-personnage>
     </div>
     <div class="col-lg-6" id="partie">
-      <img src="..." alt="..." class="rounded">
-      <img src="..." alt="..." class="rounded-top">
-      <img src="..." alt="..." class="rounded-right">
-      <img src="..." alt="..." class="rounded-bottom">
-      <img src="..." alt="..." class="rounded-left">
-      <img src="..." alt="..." class="rounded-circle">
-      <img src="..." alt="..." class="rounded-0">
+
     </div>
     <div class="col" id="de">
       <app-des></app-des>

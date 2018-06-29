@@ -18,14 +18,8 @@ export class UtilisateurService {
     return this.http.get<Utilisateur>(this.baseUrl + id);
   }
 
-  getIdByPseudo(pseudo: string): Observable<Utilisateur> {
-    this.newUrl = this.baseUrl + pseudo;
-    return this.http.get<Utilisateur>(this.newUrl);
-  }
-
-  getIdByEmail(email: string): Observable<Utilisateur> {
-    this.newUrl = this.baseUrl + email;
-    return this.http.get<Utilisateur>(this.newUrl);
+  getOneByMail(email: string):Observable<Utilisateur> {
+    return this.http.get<Utilisateur>(this.baseUrl + email);
   }
 
   remove(id: number): Observable<Utilisateur> {
