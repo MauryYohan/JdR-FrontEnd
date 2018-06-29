@@ -24,7 +24,7 @@ export class ConnectComponent implements OnInit {
   ngOnInit() {
     this.loginForm = this.fb.group({
       // Declarer nos elements de formulaire
-      'email': ['',
+      'pseudo': ['',
         Validators.compose([
           Validators.required])],
       'password': ['',
@@ -37,14 +37,14 @@ export class ConnectComponent implements OnInit {
     this.formSubmitted = true;
     // Si l'ensemble des champs sont remplie
     if  (this.loginForm.valid) {
-      console.log(this.loginForm.controls['email'].value);
+      console.log(this.loginForm.controls['pseudo'].value);
       console.log(this.loginForm.controls['password'].value);
-      console.log(this.us.getOneByMail(this.loginForm.controls['email'].value));
+      console.log(this.us.getOneByMail(this.loginForm.controls['pseudo'].value));
 
-      this.us.getOneByMail(this.loginForm.controls['email'].value).subscribe(
+      this.us.getOneByPseudo(this.loginForm.controls['pseudo'].value).subscribe(
         utilisateurFromDb => {
           console.log(utilisateurFromDb);
-          if (utilisateurFromDb.mail == this.loginForm.controls['email'].value && utilisateurFromDb.motDePasse == this.loginForm.controls['password'].value) {
+          if (utilisateurFromDb.pseudo == this.loginForm.controls['pseudo'].value && utilisateurFromDb.motDePasse == this.loginForm.controls['password'].value) {
             console.log("ok")
           }
         } );
