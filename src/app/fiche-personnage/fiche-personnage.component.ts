@@ -20,13 +20,6 @@ export class FichePersonnageComponent implements OnInit {
   constructor(private fb: FormBuilder, private router: Router, private ps: PersonnageService, private personnageservice: PersonnageService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    // this.route.params.subscribe(
-    //   params => {
-    //     if (params['id']) {
-    //       this.personnageservice.getOne(params['id']).subscribe(personnage => this.personnage = personnage);
-    //     }
-    //
-    //    });
 
         this.personnageform = this.fb.group({
           'id': [this.personnage.id],

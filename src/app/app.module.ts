@@ -33,7 +33,7 @@ const routes: Routes = [
   {path: 'salle-attente/:id', component: SalleAttenteComponent},
   {path: 'formPerso', component: FormPersonnageComponent},
   {path: 'accueil', component: AccueilComponent},
-  {path: 'partie', component: PartieComponent},
+  {path: 'partie/:id', component: PartieComponent},
 
 ];
 

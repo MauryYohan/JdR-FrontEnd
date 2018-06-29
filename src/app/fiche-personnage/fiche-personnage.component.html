@@ -1,12 +1,12 @@
-<!--<form [formGroup]="personnageform" novalidate-->
-      <!--(ngSubmit)="onSubmit()">-->
+<form [formGroup]="personnageform" novalidate
+      (ngSubmit)="onSubmit()">
   <div>
     <label for="nom" class="police">Nom</label>
-    <p id="nom" rows="3" formControlName="nom">{{personnage.nom}}</p>
+    <p id="nom" rows="3" formControlName="nom" ngDefaultControl >{{personnage.nom}}</p>
   </div>
   <div>
     <label for="classe" class="police">Classe</label>
-    <p class="p" id="classe" rows="3" formControlName="classe">{{personnage.classe}}</p>
+    <p class="p" id="classe" rows="3" formControlName="classe" ngDefaultControl>{{personnage.classe}}</p>
   </div>
 
   <div class="form-row">
@@ -65,27 +65,27 @@
   </div>
   <div>
     <label for="inventaire" class="police">Inventaire</label>
-    <p id="inventaire" rows="3" formControlName="inventaire">inventaire{{personnage.inventaire}}</p>
+    <p id="inventaire" rows="3" formControlName="inventaire" ngDefaultControl>inventaire{{personnage.inventaire}}</p>
   </div>
   <div>
     <label for="equipement" class="police">Equipement</label>
-    <p id="equipement" rows="3" formControlName="equipement">equipement{{personnage.equipement}}</p>
+    <textarea id="equipement" rows="3" formControlName="equipement" ngDefaultControl>equipement{{personnage.equipement}}</textarea>
   </div>
   <div>
     <label for="background" class="police">Background</label>
-    <p id="background" rows="3" formControlName="background">histoire du perso{{personnage.background}}</p>
+    <p id="background" rows="3">histoire du perso{{personnage.background}}</p>
   </div>
   <div>
     <label for="race" class="police">Race</label>
-    <p id="race" rows="3" formControlName="race">Gnome{{personnage.race}}</p>
+    <p id="race" rows="3">Gnome{{personnage.race}}</p>
   </div>
   <div>
     <label for="sexe" class="police">Sexe</label>
-    <p id="sexe" rows="3" formControlName="sexe">Homme{{personnage.sexe}}</p>
+    <p id="sexe" rows="3">Homme{{personnage.sexe}}</p>
   </div>
   <div>
     <label for="id_joueur"></label>
     <input type="hidden" formControlName="id" id="id_joueur" aria-describedby="id">
   </div>
-<!--</form>-->
+</form>
 
