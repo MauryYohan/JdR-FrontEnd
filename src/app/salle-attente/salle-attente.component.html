@@ -22,8 +22,8 @@
       <div *ngFor="let p of joueur.listPartie">
         <div class="block-partie">
           <h4>{{p.titrePartie}}</h4>
-          <p>{{p.description}}</p>
-          <button class="btn btn-primary pull-right" [routerLink]="['/partie/:id']">Acceder à la partie</button>
+          <p>{{p.Description}}</p>
+          <button class="btn btn-primary pull-right" (click)="partieRoute(p.id)">Acceder à la partie</button>
         </div>
       </div>
       <app-personnage></app-personnage>

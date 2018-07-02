@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {PersonnageService} from '../personnage.service';
+import {PartieService} from '../partie.service';
+import {JoueurService} from '../joueur.service';
+import {SessionStorageService} from 'ngx-webstorage';
 
 @Component({
   selector: 'app-partie',
@@ -9,17 +12,28 @@ import {PersonnageService} from '../personnage.service';
 })
 export class PartieComponent implements OnInit {
   idPerso;
+  idPartie;
   personnage;
-  constructor(private personnageService: PersonnageService, private route: ActivatedRoute) { }
+  partie;
+  joueur;
+  constructor(private personnageService: PersonnageService, private route: ActivatedRoute, private partieService:PartieService, private joueurService: JoueurService, private session: SessionStorageService) { }
 
   ngOnInit() {
 
     this.route.params.subscribe(
       params => {
-       this.idPerso = params['id'];
+       this.idPartie = params['id'];
       })
-    this.personnageService.getOne(this.idPerso).subscribe(pp => {
-        this.personnage = pp;
+    this.partieService.getOne(this.idPartie).subscribe(pp => {
+        this.partie = pp;
+        console.log(this.partie);
+        let joueurId = this.session.retrieve('id');
+        this.joueurService.getOne(joueurId).subscribe( joueur => {
+          this.joueur = joueur;
+          console.log(this.joueur);
+
+        });
+
       },
       () => {
         console.log('error');
@@ -27,7 +41,7 @@ export class PartieComponent implements OnInit {
       () => {
         console.log('complete');
       });
-    this.personnageService.list().subscribe(leList => {
+    this.partieService.list().subscribe(leList => {
     });
 
   }

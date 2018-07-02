@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {SessionStorageService} from 'ngx-webstorage';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  constructor(private _sessionStorage:SessionStorageService){}
+
+  setSessionStorage(key, value){
+    this._sessionStorage.store(key, value);
+  }
+  getSessionStorage(key){
+    return this._sessionStorage.retrieve(key);
+  }
 }

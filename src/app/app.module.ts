@@ -24,6 +24,7 @@ import {DesComponent} from './des/des.component';
 import {ChatComponent} from './chat/chat.component';
 import { UtilisateurComponent } from './utilisateur/utilisateur.component';
 import {FormPartieComponent} from './form-partie/form-partie.component';
+import {Ng2Webstorage} from 'ngx-webstorage';
 
 const routes: Routes = [
   {path: '', redirectTo: 'accueil', pathMatch: 'full'},
@@ -63,7 +64,8 @@ const routes: Routes = [
     HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    Ng2Webstorage
   ],
 
   providers: [JoueurService, UtilisateurService, PersonnageService, PartieService],

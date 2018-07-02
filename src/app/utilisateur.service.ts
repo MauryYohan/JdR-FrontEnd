@@ -10,8 +10,8 @@ export class UtilisateurService {
   newUrl = '';
   constructor(private http: HttpClient) { }
 
-  list(): Observable<Utilisateur> {
-    return this.http.get<Utilisateur>(this.baseUrl);
+  list(): Observable<Array<Utilisateur>> {
+    return this.http.get<Array<Utilisateur>>(this.baseUrl);
   }
 
   getOne(id: number): Observable<Utilisateur> {

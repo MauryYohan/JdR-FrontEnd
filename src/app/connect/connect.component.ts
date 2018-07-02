@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {UtilisateurService} from '../utilisateur.service';
 import {Utilisateur} from '../utilisateur';
 import {Router} from '@angular/router';
+import {SessionStorageService} from 'ngx-webstorage';
 
 @Component({
   selector: 'app-connect',
@@ -19,7 +20,7 @@ export class ConnectComponent implements OnInit {
 
   @Output() output = new EventEmitter();
 
-  constructor(private fb: FormBuilder, private router: Router, private us: UtilisateurService) { }
+  constructor(private fb: FormBuilder, private router: Router, private us: UtilisateurService, private sessionStorage:SessionStorageService) { }
 
   ngOnInit() {
     this.loginForm = this.fb.group({
@@ -41,13 +42,28 @@ export class ConnectComponent implements OnInit {
       console.log(this.loginForm.controls['password'].value);
       console.log(this.us.getOneByMail(this.loginForm.controls['pseudo'].value));
 
+      this.us.list().subscribe(utilis =>{
+        console.log(utilis);
+        for(let u of utilis){
+          if(u.pseudo == this.loginForm.controls['pseudo'].value){
+            if(u.motDePasse == this.loginForm.controls['password'].value){
+              let idUtil = ''+u.id;
+              sessionStorage.setItem('id', idUtil);
+              sessionStorage.setItem('pseudo', u.pseudo);
+              let idS = '/salle-attente/'+sessionStorage.getItem('id');
+              this.router.navigate([idS]);
+            }
+          }
+        }
+      })
+    /*
       this.us.getOneByPseudo(this.loginForm.controls['pseudo'].value).subscribe(
         utilisateurFromDb => {
           console.log(utilisateurFromDb);
-          if (utilisateurFromDb.pseudo == this.loginForm.controls['pseudo'].value && utilisateurFromDb.motDePasse == this.loginForm.controls['password'].value) {
-            console.log("ok")
+          if (utilisateurFromDb.pseudo == this.loginForm.controls['pseudo'].value) {
+            console.log("ok");
           }
-        } );
+        } );*/
     }
 
   }

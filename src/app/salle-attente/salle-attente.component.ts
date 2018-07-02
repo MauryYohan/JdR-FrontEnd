@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {JoueurService} from '../joueur.service';
 import {PartieService} from '../partie.service';
 import {ActivatedRoute} from "@angular/router";
+import {SessionStorageService} from 'ngx-webstorage';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-salle-attente',
@@ -10,19 +12,26 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class SalleAttenteComponent implements OnInit {
 
-  joueurList;
+
   joueur;
-  partieList;
-  constructor(private joueurService: JoueurService, private partieService: PartieService, private route: ActivatedRoute) { }
+  joueurId
+  constructor(private joueurService: JoueurService, private partieService: PartieService, private route: ActivatedRoute, private sessionStorage:SessionStorageService, private router: Router) { }
 
   ngOnInit() {
     this.route.params.subscribe(
       params => {
-        if(params['id'])
-          this.joueurService.getOne(params['id']).subscribe(joueur=> this.joueur = joueur);
+        this.joueurId = params['id'];
+      });
+    this.joueurService.getOne(this.joueurId).subscribe(pp => {
+      this.joueur = pp;
+      console.log(this.joueur);
+    });
 
-      })
 
+  }
+  partieRoute(key){
+    let idS = '/partie/'+key;
+    this.router.navigate([idS]);
   }
 
 }
