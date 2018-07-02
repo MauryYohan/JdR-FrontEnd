@@ -1,7 +1,19 @@
-#composant {
-margin: auto;
-  margin-top: 50px;
-}
+
 #entete {
-  margin-top: 20px;
+  margin: 2rem 0;
+}
+
+.page-connexion{
+  display: block;
+  margin-top: 15vh;
+}
+.composant{
+  width: 100%;
+}
+.img-connect{
+  display: block;
+  margin: 0 auto;
+}
+.form-connect{
+  padding: 2rem;
 }

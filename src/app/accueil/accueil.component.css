@@ -1,12 +1,14 @@
 .container{
   background-image: url("/assets/imageAccueil/final_fantaisy.jpg");
   background-repeat: no-repeat;
+  margin-top: 15vh;
 }
 
 .form-group{
   margin-top: 600px;
 }
 
-.form-row{
-  margin-left: 250px;
+.form-row button{
+  display: block;
+  margin: 0 auto;
 }
