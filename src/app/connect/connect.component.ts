@@ -3,8 +3,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {UtilisateurService} from '../utilisateur.service';
 import {Utilisateur} from '../utilisateur';
 import {Router} from '@angular/router';
-import {UtilisateurListComponent} from '../utilisateur-list/utilisateur-list.component';
-import {User} from 'firebase';
+
 @Component({
   selector: 'app-connect',
   templateUrl: './connect.component.html',
@@ -35,7 +34,7 @@ export class ConnectComponent implements OnInit {
   }
 
   submitForm() {
-    this.formSubmitted = true;
+   /* this.formSubmitted = true;
     // Si l'ensemble des champs sont remplie
     if  (this.loginForm.valid) {
       console.log(this.loginForm.controls['pseudo'].value);

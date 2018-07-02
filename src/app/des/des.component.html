@@ -1,14 +1,15 @@
 
   <div class="row">
-    <div class="col-12">
+    <div>
       <img src="assets/imageDes/des.jpg" class="img" alt="image de dés"/>
     </div>
   </div>
   <div class="resultat" style="padding: 10px">{{nb}}</div>
   <div class="buttons">
     <div id="des" style="text-align: center">
-      <button type="button" class="btn btn-dark" (click)="randomD(6)" style="text-align: justify">Lancer le dé 6</button>
-           <img src="assets/imageDes/de20.png" alt="imageD20" (click)="randomD(20)" style="margin-top: 65px">
+      <img src="assets/imageDes/de6.png" alt="imageD6" (click)="randomD(6)" style="cursor: pointer">
+      <!--<button type="button" class="btn btn-dark" (click)="randomD(6)" style="text-align: justify">Lancer le dé 6</button>-->
+      <img src="assets/imageDes/de20.png" alt="imageD20" (click)="randomD(20)" style="cursor: pointer">
       <!--<button type="button" class="btn btn-dark" (click)= >Lancer le dé 20</button>-->
     </div>
   </div>
