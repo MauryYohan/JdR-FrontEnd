@@ -23,6 +23,7 @@ import {FichePersonnageComponent} from './fiche-personnage/fiche-personnage.comp
 import {DesComponent} from './des/des.component';
 import {ChatComponent} from './chat/chat.component';
 import { UtilisateurComponent } from './utilisateur/utilisateur.component';
+
 import {FormPartieComponent} from './form-partie/form-partie.component';
 import {Ng2Webstorage} from 'ngx-webstorage';
 
@@ -68,7 +69,7 @@ const routes: Routes = [
     Ng2Webstorage
   ],
 
-  providers: [JoueurService, UtilisateurService, PersonnageService, PartieService],
+  providers: [JoueurService, UtilisateurService, PersonnageService, PartieService, AuthGuardService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

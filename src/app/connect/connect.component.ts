@@ -56,14 +56,7 @@ export class ConnectComponent implements OnInit {
           }
         }
       })
-    /*
-      this.us.getOneByPseudo(this.loginForm.controls['pseudo'].value).subscribe(
-        utilisateurFromDb => {
-          console.log(utilisateurFromDb);
-          if (utilisateurFromDb.pseudo == this.loginForm.controls['pseudo'].value) {
-            console.log("ok");
-          }
-        } );*/
+   
     }
 
   }
@@ -74,3 +67,6 @@ export class ConnectComponent implements OnInit {
   }
 
 }
+
+import {SessionStorageService} from 'ngx-webstorage';
+  constructor(private fb: FormBuilder, private router: Router, private us: UtilisateurService, private sessionStorage:SessionStorageService) { }

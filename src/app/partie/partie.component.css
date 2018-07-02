@@ -1,21 +1,17 @@
-#partieDeroulement{
-  position: relative;
-  border:1px solid #f00;
+.partieDeroulement{
   height: 80vh;
-  padding: 2rem;
-
+  margin-left: 10px;
+  border-bottom: silver 8px solid;
 }
-#fichePerso {
+
+.fichePerso {
   text-align: justify;
   overflow: auto;
+  border-right: silver 8px solid;
 }
 
-#de{
-  border: solid black 1px;
-}
-
-button{
-  margin: 0 auto;
+.de{
+  border-left: silver 8px solid;
 }
 
 

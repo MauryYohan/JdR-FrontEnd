@@ -38,11 +38,21 @@ export class Utilisateur {
   set avatar(value: string) {
     this._avatar = value;
   }
+
+  get uid(): string {
+    return this._uid;
+  }
+
+  set uid(value: string) {
+    this._uid = value;
+  }
   constructor(
     private _id: number = 0,
     private _mail: string = '',
     private _pseudo: string = '',
     private _motDePasse: string = '',
-    private _avatar: string = ''
+    private _avatar: string = '',
+    private _uid: string = ''
   ) {}
+
 }
