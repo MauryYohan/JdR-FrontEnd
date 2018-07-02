@@ -4,13 +4,12 @@
       <img src="assets/imageDes/des.jpg" class="img" alt="image de dés"/>
     </div>
   </div>
-  <p class="resultat">{{nb}}</p>
+  <div class="resultat" style="padding: 10px">{{nb}}</div>
   <div class="buttons">
-    <div id="desSix">
+    <div id="des" style="text-align: center">
       <button type="button" class="btn btn-dark" (click)="randomD(6)" style="text-align: justify">Lancer le dé 6</button>
-    </div>
-    <div id="desVingt">
-      <button type="button" class="btn btn-dark" (click)="randomD(20)" style="text-align: justify">Lancer le dé 20</button>
+           <img src="assets/imageDes/de20.png" alt="imageD20" (click)="randomD(20)" style="margin-top: 65px">
+      <!--<button type="button" class="btn btn-dark" (click)= >Lancer le dé 20</button>-->
     </div>
   </div>
 
