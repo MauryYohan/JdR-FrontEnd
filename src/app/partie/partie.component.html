@@ -7,9 +7,19 @@
       <div id="AvatarMJ" style="margin-bottom: 20px; margin-top: 30px">
         <img src="assets/imagePartie/avatar1.jpg" alt="MJ" class="rounded">
       </div>
-        <div class="col-12" style="margin-bottom: 50px" >
+      <ngb-carousel *ngIf="images">
+        <ng-template ngbSlide>
           <img src="assets/imagePartie/carte.jpg" class="img" alt="carte"/>
-        </div>
+        </ng-template>
+        <ng-template ngbSlide>
+          <img src="assets/imagePartie/carte2.jpg" class="img" alt="carte"/>
+        </ng-template>
+        <ng-template ngbSlide>
+          <img src="assets/imagePartie/vieillecarte.jpg" class="img" alt="carte"/>
+        </ng-template>
+      </ngb-carousel>
+        <!--<div class="col-12" style="margin-bottom: 50px" >-->
+        <!--</div>-->
           <div class="row" style="text-align: center">
             <div class="col-3">
               <img src="assets/imagePartie/avatar1.jpg" alt="..." class="rounded">

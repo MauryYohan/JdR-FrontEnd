@@ -10,7 +10,7 @@ import {PersonnageService} from '../personnage.service';
 export class PartieComponent implements OnInit {
   idPerso;
   personnage;
-  constructor(private personnageService: PersonnageService,private route: ActivatedRoute) { }
+  constructor(private personnageService: PersonnageService, private route: ActivatedRoute) { }
 
   ngOnInit() {
 
