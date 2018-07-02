@@ -15,22 +15,18 @@
           </div>
           <div class="col-8">
 
-            <form [formGroup]="loginForm" id="cardFormConnect" (ngSubmit)="submitForm()">
-              <div id="formConnect" class="form-group">
-                <label for="pseudo" style=" font-weight: bold;">Pseudo</label>
-                <input type="text" class="form-control" id="pseudo" formControlName="pseudo" aria-describedby="loginHelp" placeholder="Merci de renseigner votre email">
-                <!--<small id="loginHelp" class="form-text">Pseudo oublié? Recuperez-le ici !</small>-->
-              </div>
-
+            <form [formGroup] ="loginForm" (ngSubmit)="submitForm()">
               <div class="form-group">
-                <label for="password" style=" font-weight: bold;">Mot de passe</label>
-                <input type="password" class="form-control" id="password" formControlName="password" placeholder="Merci de renseigner votre mot de passe">
-                <!-- <small id="passwordHelp" class="form-password">Mot de passe perdu? Récupérez-le ici !</small> -->
+                <label for="email">Email</label>
+                <input type="text" id="email" class="form-control" formControlName="email">
               </div>
-
-              <button type="submit" class="btn btn-primary">Se connecter</button>
-
+              <div class="form-group">
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" class="form-control" formControlName="password">
+              </div>
+              <button class="btn btn-primary" type="submit" [disabled]="loginForm.invalid">Se connecter</button>
             </form>
+            <p class="text-danger">{{errorMessage}}</p>
 
           </div>
 
