@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {Observable, Subject} from 'rxjs';
 import {Utilisateur} from './utilisateur';
 
 @Injectable()
@@ -8,7 +8,9 @@ export class UtilisateurService {
 
   baseUrl = 'http://localhost:8090/jdr/utilisateurs/';
   newUrl = '';
+
   constructor(private http: HttpClient) { }
+
 
   list(): Observable<Utilisateur> {
     return this.http.get<Utilisateur>(this.baseUrl);
@@ -39,5 +41,7 @@ export class UtilisateurService {
   del(id: number): Observable<any> {
     return this.http.delete(this.baseUrl + id);
   }
+
+
 
 }
