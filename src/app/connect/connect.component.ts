@@ -4,6 +4,7 @@ import {UtilisateurService} from '../utilisateur.service';
 import {Utilisateur} from '../utilisateur';
 import {Router} from '@angular/router';
 import {UtilisateurListComponent} from '../utilisateur-list/utilisateur-list.component';
+import {User} from 'firebase';
 @Component({
   selector: 'app-connect',
   templateUrl: './connect.component.html',
@@ -49,6 +50,12 @@ export class ConnectComponent implements OnInit {
           }
         } );
     }
+
+  }
+
+  static ifExist() {
+    // noinspection JSAnnotator
+    list: Array<Utilisateur> 
 
   }
 
