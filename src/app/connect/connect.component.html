@@ -1,20 +1,22 @@
-<div id="entete" style="text-align: center">
-  <h3>Bienvenue dans le jeu ! </h3>
-</div>
+<div class="container page-connexion">
+  <div id="entete" style="text-align: center">
+    <h3>Bienvenue dans le jeu ! </h3>
+  </div>
 
-<div class="row">
+  <div class="row">
 
-  <div class="col-8" id="composant">
+    <div class="composant" id="composant">
 
-    <div class="card">
-      <div class="card-body">
+      <div class="card">
+        <div class="card-body">
 
-        <div class="row">
-          <div class="col-4">
-          <img src="assets/imageConnexion/connexion.jpg">
-          </div>
-          <div class="col-8">
+          <div class="row">
+            <div class="col-4">
+            <img class="img-connect" src="assets/imageConnexion/connexion.jpg">
+            </div>
+            <div class="col-8">
 
+<<<<<<< HEAD
             <form [formGroup] ="loginForm" (ngSubmit)="submitForm()">
               <div class="form-group">
                 <label for="email">Email</label>
@@ -27,12 +29,31 @@
               <button class="btn btn-primary" type="submit" [disabled]="loginForm.invalid">Se connecter</button>
             </form>
             <p class="text-danger">{{errorMessage}}</p>
+=======
+              <form class="form-connect" [formGroup]="loginForm" id="cardFormConnect" (ngSubmit)="submitForm()">
+                <div id="formConnect" class="form-group">
+                  <label for="pseudo" style=" font-weight: bold;">Pseudo</label>
+                  <input type="text" class="form-control" id="pseudo" formControlName="pseudo" aria-describedby="loginHelp" placeholder="Merci de renseigner votre email">
+                  <!--<small id="loginHelp" class="form-text">Pseudo oublié? Recuperez-le ici !</small>-->
+                </div>
+
+                <div class="form-group">
+                  <label for="password" style=" font-weight: bold;">Mot de passe</label>
+                  <input type="password" class="form-control" id="password" formControlName="password" placeholder="Merci de renseigner votre mot de passe">
+                  <!-- <small id="passwordHelp" class="form-password">Mot de passe perdu? Récupérez-le ici !</small> -->
+                </div>
+
+                <button type="submit" class="btn btn-primary">Se connecter</button>
+
+              </form>
+>>>>>>> master
+
+            </div>
 
           </div>
-
         </div>
       </div>
-    </div>
 
+    </div>
   </div>
 </div>

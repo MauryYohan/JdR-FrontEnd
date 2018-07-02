@@ -16,8 +16,6 @@ import { ListPersonnageComponent } from './list-personnage/list-personnage.compo
 import {SalleAttenteComponent} from './salle-attente/salle-attente.component';
 import {JoueurService} from './joueur.service';
 import { AccueilComponent } from './accueil/accueil.component';
-import {Personnage} from './personnage';
-import {P} from '@angular/core/src/render3';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { FormInscriptionComponent } from './form-inscription/form-inscription.component';
 import {PartieService} from './partie.service';
@@ -25,8 +23,12 @@ import {FichePersonnageComponent} from './fiche-personnage/fiche-personnage.comp
 import {DesComponent} from './des/des.component';
 import {ChatComponent} from './chat/chat.component';
 import { UtilisateurComponent } from './utilisateur/utilisateur.component';
+<<<<<<< HEAD
 import {AuthGuardService} from './auth-guard.service';
 import {AuthService} from './auth.service';
+=======
+import {FormPartieComponent} from './form-partie/form-partie.component';
+>>>>>>> master
 
 const routes: Routes = [
   {path: '', redirectTo: 'accueil', pathMatch: 'full'},
@@ -36,8 +38,14 @@ const routes: Routes = [
   {path: 'salle-attente/:id', canActivate: [AuthGuardService], component: SalleAttenteComponent},
   {path: 'formPerso', canActivate: [AuthGuardService], component: FormPersonnageComponent},
   {path: 'accueil', component: AccueilComponent},
+<<<<<<< HEAD
   {path: 'partie/:id', canActivate: [AuthGuardService], component: PartieComponent},
   {path: 'listUser', canActivate: [AuthGuardService], component: UtilisateurListComponent}
+=======
+  {path: 'partie/:id', component: PartieComponent},
+  {path: 'listUser', component: UtilisateurListComponent},
+  {path: 'formPartie', component: FormPartieComponent}
+>>>>>>> master
 ];
 
 @NgModule({
@@ -56,7 +64,8 @@ const routes: Routes = [
     FichePersonnageComponent,
     DesComponent,
     ChatComponent,
-    UtilisateurComponent
+    UtilisateurComponent,
+    FormPartieComponent
   ],
   imports: [
     BrowserModule,

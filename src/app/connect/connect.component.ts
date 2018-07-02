@@ -1,7 +1,10 @@
 import {Component, EventEmitter, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
+<<<<<<< HEAD
 import {AuthService} from '../auth.service';
+=======
+>>>>>>> master
 
 @Component({
   selector: 'app-connect',
@@ -36,6 +39,7 @@ export class ConnectComponent implements OnInit {
   submitForm() {
     this.formSubmitted = true;
     // Si l'ensemble des champs sont remplie
+<<<<<<< HEAD
     const email = this.loginForm.get('email').value;
     const password = this.loginForm.get('password').value;
     this.authService.signInUser(email, password).then(
@@ -46,6 +50,26 @@ export class ConnectComponent implements OnInit {
         this.errorMessage = error;
       }
     );
+=======
+    if  (this.loginForm.valid) {
+      console.log(this.loginForm.controls['pseudo'].value);
+      console.log(this.loginForm.controls['password'].value);
+      console.log(this.us.getOneByMail(this.loginForm.controls['pseudo'].value));
+
+      this.us.getOneByPseudo(this.loginForm.controls['pseudo'].value).subscribe(
+        utilisateurFromDb => {
+          console.log(utilisateurFromDb);
+          if (utilisateurFromDb.pseudo == this.loginForm.controls['pseudo'].value && utilisateurFromDb.motDePasse == this.loginForm.controls['password'].value) {
+            console.log("ok")
+          }
+        } );
+    }
+
+  }
+
+  static ifExist() {
+    // noinspection JSAnnotator
+>>>>>>> master
 
   }
 

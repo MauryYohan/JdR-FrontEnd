@@ -1,17 +1,19 @@
 
-  <div class="row">
-    <div class="col-12">
+    <div class="imgD">
       <img src="assets/imageDes/des.jpg" class="img" alt="image de dés"/>
     </div>
-  </div>
-  <p class="resultat">{{nb}}</p>
-  <div class="buttons">
-    <div id="desSix">
-      <button type="button" class="btn btn-dark" (click)="randomD(6)" style="text-align: justify">Lancer le dé 6</button>
-    </div>
-    <div id="desVingt">
-      <button type="button" class="btn btn-dark" (click)="randomD(20)" style="text-align: justify">Lancer le dé 20</button>
-    </div>
+  <div class="resultat" style="padding: 10px">{{nb}}</div>
+  <div class="row D6" id="">
+      <div class="col-sm-6" id="de6" style="margin-top: 7px">
+        <img src="assets/imageDes/de6.png" alt="imageD6" (click)="randomD(6)" style="cursor: pointer"><br>
+         <p (click)="randomD(6)" style="cursor: pointer; font-family: OCR A Std, monospace, sans-serif;">Lancer Dé 6</p>
+      </div>
+      <div class="col-sm-5">
+      <!--<button type="button" class="btn btn-dark" (click)="randomD(6)" style="text-align: justify">Lancer le dé 6</button>-->
+        <img src="assets/imageDes/de20.png" alt="imageD20" (click)="randomD(20)" style="cursor: pointer"><br>
+        <p (click)="randomD(20)" >Lancer Dé 20</p>
+      </div>
+      <!--<button type="button" class="btn btn-dark" (click)= >Lancer le dé 20</button>-->
   </div>
 
 

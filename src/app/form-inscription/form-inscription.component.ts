@@ -1,10 +1,13 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {FormBuilder, FormGroup, MaxLengthValidator, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Utilisateur} from '../utilisateur';
 import {Router} from '@angular/router';
 import {UtilisateurService} from '../utilisateur.service';
+<<<<<<< HEAD
 import {Personnage} from '../personnage';
 import {AuthService} from '../auth.service';
+=======
+>>>>>>> master
 
 @Component({
   selector: 'app-form-inscription',
@@ -48,6 +51,7 @@ export class FormInscriptionComponent implements OnInit {
   onSubmit() {
     this.formSubmitted = true;
     if (this.inscriptionform.valid) {
+<<<<<<< HEAD
       const email = this.inscriptionform.get('email').value;
       const password = this.inscriptionform.get('password').value;
       console.log("submit");
@@ -70,6 +74,17 @@ export class FormInscriptionComponent implements OnInit {
 
         });
       })
+=======
+      console.log("valide");
+      console.log(this.inscriptionform.value);
+        this.us.add(this.inscriptionform.value).subscribe(utilisateur => {
+        console.log(utilisateur);
+          this.output.emit({'sev':'success', 'sum':'Add successfull!', 'detail': 'Inscription ajoutée:' + utilisateur.id
+
+          });
+       })
+      this.hideDialog();
+>>>>>>> master
     }
     //this.display = false;
   }

@@ -81,7 +81,7 @@ export class FormPersonnageComponent implements OnInit {
     }
     hideDialog() {
       this.display = false;
-      this.router.navigate(['/salle-attente']);
+      this.router.navigate(['/salle-attente/id']);
     }
 
 }

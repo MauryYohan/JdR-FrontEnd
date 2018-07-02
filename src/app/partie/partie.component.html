@@ -1,41 +1,34 @@
 
-<div class="row" id="partieDeroulement">
-    <div class="col-lg-3" id="fichePerso">
-      <app-fiche-personnage *ngIf="personnage !== undefinedx" [personnage]="personnage"></app-fiche-personnage>
+<div class="row partieDeroulement">
+    <div class="col-lg-3 fichePerso">
+      <!--<app-fiche-personnage  [personnage]="personnage"></app-fiche-personnage>-->
+      <app-fiche-personnage *ngIf="personnage!=undefined" [personnage]="personnage"></app-fiche-personnage>
     </div>
-    <div class="col-lg-7" id="partie" style="text-align: center">
-      <div id="AvatarMJ" style="margin-bottom: 20px; margin-top: 30px">
+    <div class="col-lg-7 partie" style="text-align: center; margin-top: 20px">
+      <div id="AvatarMJ" style="margin-bottom: 20px">
         <img src="assets/imagePartie/avatar1.jpg" alt="MJ" class="rounded">
       </div>
-      <ngb-carousel *ngIf="images">
-        <ng-template ngbSlide>
+      <div class="row">
+        <div class="col-12" style="margin-bottom: 20px">
           <img src="assets/imagePartie/carte.jpg" class="img" alt="carte"/>
-        </ng-template>
-        <ng-template ngbSlide>
-          <img src="assets/imagePartie/carte2.jpg" class="img" alt="carte"/>
-        </ng-template>
-        <ng-template ngbSlide>
-          <img src="assets/imagePartie/vieillecarte.jpg" class="img" alt="carte"/>
-        </ng-template>
-      </ngb-carousel>
-        <!--<div class="col-12" style="margin-bottom: 50px" >-->
-        <!--</div>-->
-          <div class="row" style="text-align: center">
+        </div>
+      </div>
+      <div class="row" style="text-align: center">
             <div class="col-3">
-              <img src="assets/imagePartie/avatar1.jpg" alt="..." class="rounded">
+              <img src="assets/imagePartie/elfe.jpg" alt="..." class="rounded">
             </div>
             <div class="col-3">
-              <img src="assets/imagePartie/avatar1.jpg" alt="..." class="rounded">
+              <img src="assets/imagePartie/gnome.jpg" alt="..." class="rounded">
             </div>
             <div class="col-3">
-              <img src="assets/imagePartie/avatar1.jpg" alt="..." class="rounded">
+              <img src="assets/imagePartie/magicien.jpg" alt="..." class="rounded">
             </div>
             <div class="col-3">
-              <img src="assets/imagePartie/avatar1.jpg" alt="..." class="rounded">
+              <img src="assets/imagePartie/tigre.jpg" alt="..." class="rounded">
             </div>
         </div>
     </div>
-    <div class="col" id="de">
+    <div class="col de">
       <app-des></app-des>
     </div>
 </div>
