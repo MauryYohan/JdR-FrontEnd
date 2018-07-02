@@ -1,9 +1,8 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {FormBuilder, FormGroup, MaxLengthValidator, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Utilisateur} from '../utilisateur';
 import {Router} from '@angular/router';
 import {UtilisateurService} from '../utilisateur.service';
-import {Personnage} from '../personnage';
 
 @Component({
   selector: 'app-form-inscription',
@@ -41,7 +40,7 @@ export class FormInscriptionComponent implements OnInit {
       console.log(this.inscriptionform.value);
         this.us.add(this.inscriptionform.value).subscribe(utilisateur => {
         console.log(utilisateur);
-          this.output.emit({'sev':'success', 'sum':'Add successfull!', 'detail': 'Incident ajouté:' + utilisateur.id
+          this.output.emit({'sev':'success', 'sum':'Add successfull!', 'detail': 'Inscription ajoutée:' + utilisateur.id
 
           });
        })

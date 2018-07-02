@@ -34,7 +34,7 @@ export class ConnectComponent implements OnInit {
   }
 
   submitForm() {
-   /* this.formSubmitted = true;
+    this.formSubmitted = true;
     // Si l'ensemble des champs sont remplie
     if  (this.loginForm.valid) {
       console.log(this.loginForm.controls['pseudo'].value);
@@ -54,7 +54,6 @@ export class ConnectComponent implements OnInit {
 
   static ifExist() {
     // noinspection JSAnnotator
-    list: Array<Utilisateur>*/
 
   }
 
