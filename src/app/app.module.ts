@@ -16,8 +16,6 @@ import { ListPersonnageComponent } from './list-personnage/list-personnage.compo
 import {SalleAttenteComponent} from './salle-attente/salle-attente.component';
 import {JoueurService} from './joueur.service';
 import { AccueilComponent } from './accueil/accueil.component';
-import {Personnage} from './personnage';
-import {P} from '@angular/core/src/render3';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { FormInscriptionComponent } from './form-inscription/form-inscription.component';
 import {PartieService} from './partie.service';
@@ -25,6 +23,7 @@ import {FichePersonnageComponent} from './fiche-personnage/fiche-personnage.comp
 import {DesComponent} from './des/des.component';
 import {ChatComponent} from './chat/chat.component';
 import { UtilisateurComponent } from './utilisateur/utilisateur.component';
+import {FormPartieComponent} from './form-partie/form-partie.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'accueil', pathMatch: 'full'},
@@ -35,7 +34,8 @@ const routes: Routes = [
   {path: 'formPerso', component: FormPersonnageComponent},
   {path: 'accueil', component: AccueilComponent},
   {path: 'partie/:id', component: PartieComponent},
-  {path: 'listUser', component: UtilisateurListComponent}
+  {path: 'listUser', component: UtilisateurListComponent},
+  {path: 'formPartie', component: FormPartieComponent}
 ];
 
 @NgModule({
@@ -54,7 +54,8 @@ const routes: Routes = [
     FichePersonnageComponent,
     DesComponent,
     ChatComponent,
-    UtilisateurComponent
+    UtilisateurComponent,
+    FormPartieComponent
   ],
   imports: [
     BrowserModule,
