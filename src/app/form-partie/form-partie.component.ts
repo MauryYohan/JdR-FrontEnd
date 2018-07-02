@@ -48,6 +48,6 @@ export class FormPartieComponent implements OnInit {
     }
     hideDialog(){
       this.display = false;
-      this.router.navigate(['/salle-attente/:id']);
+      this.router.navigate(['/salle-attente/1']);
     }
 }
