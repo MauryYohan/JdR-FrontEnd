@@ -69,7 +69,7 @@ const routes: Routes = [
     Ng2Webstorage
   ],
 
-  providers: [JoueurService, UtilisateurService, PersonnageService, PartieService, AuthGuardService, AuthService],
+  providers: [JoueurService, UtilisateurService, PersonnageService, PartieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

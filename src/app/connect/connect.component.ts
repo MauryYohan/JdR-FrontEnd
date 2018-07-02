@@ -56,7 +56,7 @@ export class ConnectComponent implements OnInit {
           }
         }
       })
-   
+
     }
 
   }
@@ -67,6 +67,3 @@ export class ConnectComponent implements OnInit {
   }
 
 }
-
-import {SessionStorageService} from 'ngx-webstorage';
-  constructor(private fb: FormBuilder, private router: Router, private us: UtilisateurService, private sessionStorage:SessionStorageService) { }
