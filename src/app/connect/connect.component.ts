@@ -61,9 +61,5 @@ export class ConnectComponent implements OnInit {
 
   }
 
-  static ifExist() {
-    // noinspection JSAnnotator
-
-  }
 
 }
