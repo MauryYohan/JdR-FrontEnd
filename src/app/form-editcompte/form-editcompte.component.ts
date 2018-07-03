@@ -1,8 +1,10 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Utilisateur} from '../utilisateur';
+import {Partie} from '../partie';
 import {ActivatedRoute, Router} from '@angular/router';
 import {UtilisateurService} from '../utilisateur.service';
+import {PartieService} from '../partie.service';
 
 @Component({
   selector: 'app-form-editcompte',
@@ -23,7 +25,8 @@ export class FormEditcompteComponent implements OnInit {
   constructor(private fb: FormBuilder,
               private router: Router,
               private route: ActivatedRoute,
-              private us: UtilisateurService) { }
+              private us: UtilisateurService,
+              private ps: PartieService) { }
 
   @Output() output = new EventEmitter();
 
@@ -47,8 +50,9 @@ export class FormEditcompteComponent implements OnInit {
         'mail': [this.joueur.mail, Validators.compose([Validators.required, Validators.email])],
         'motDePasse': [this.joueur.motDePasse, Validators.compose([Validators.required, Validators.minLength(6)])],
         'pseudo': [this.joueur.pseudo, [Validators.compose([Validators.required])]],
-        'estMj': [this.joueur.estMj = false],
+        'estMj': [this.joueur.estMj],
         'avatar': [this.joueur.avatar],
+        'listPartie': [this.ps.list()]
       });
 
     });
