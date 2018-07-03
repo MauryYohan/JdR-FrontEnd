@@ -14,10 +14,15 @@ export class SalleAttenteComponent implements OnInit {
 
 
   joueur;
-  joueurId
-  constructor(private utilisateurService: UtilisateurService, private partieService: PartieService, private route: ActivatedRoute, private sessionStorage:SessionStorageService, private router: Router) { }
+  joueurId;
+  constructor(private utilisateurService: UtilisateurService,
+              private partieService: PartieService,
+              private route: ActivatedRoute,
+              private sessionStorage:SessionStorageService,
+              private router: Router) { }
 
   ngOnInit() {
+    // On recupere l'id de l'utilisateur
     this.route.params.subscribe(
       params => {
         this.joueurId = params['id'];
@@ -31,6 +36,11 @@ export class SalleAttenteComponent implements OnInit {
   }
   partieRoute(key){
     let idS = '/partie/'+key;
+    this.router.navigate([idS]);
+  }
+
+  editCompteRoute(key){
+    let idS = '/formEditCompte/'+key;
     this.router.navigate([idS]);
   }
 

@@ -1,0 +1,45 @@
+<div class="container page-inscription" *ngIf="joueur">
+  <div id="entete" style="text-align: center">
+    <h3> Tu peux modifier ton compte ici ! </h3>
+  </div>
+
+  <div style="margin: auto">
+    <div class="card">
+      <div class="card-body" style="margin: 50px;">
+        <form [formGroup]="editCompteForm" novalidate (ngSubmit)="onSubmit()">
+          <div class="form-row">
+            <div class="form-group col-4">
+              <img src="assets/imageEditCompte/Female_Pathfinder.jpg">
+            </div>
+            <div class="form-group col-8">
+              <div class="form-row">
+                <div class="form-group col-6">
+                </div>
+                <div class="form-group col-6">
+                </div>
+                <div class="form-group col-6">
+                  <label for="inputEmail">Email</label>
+                  <input type="email" class="form-control" formControlName="mail" id="inputEmail" placeholder="Email">
+                </div>
+                <div class="form-group col-6">
+                  <label for="inputPassword">Mot de passe</label>
+                  <input type="password" class="form-control" formControlName="motDePasse" id="inputPassword" placeholder="6 caractères minimum">
+                </div>
+                <div class="form-group col-6">
+                  <label for="pseudo">Pseudo</label>
+                  <input type="text" class="form-control" id="pseudo" formControlName="pseudo" placeholder="Pseudo">
+                </div>
+                <div class="form-group col-6">
+                  <label for="inputPasswordConfirm">Confirmation mot de passe</label>
+                  <input type="password" class="form-control" formControlName="motDePasse" id="inputPasswordConfirm" placeholder="Confirmation mot de passe">
+                </div>
+              </div>
+              <button type="submit" style="float: right;" class="btn btn-outline-primary" (click)="salleAttenteRoute(joueur.id)" [disabled]="!inscriptionform.valid">Retour</button>
+              <button type="submit" style="float: right;" class="btn btn-outline-primary"  [disabled]="!inscriptionform.valid">Valider</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

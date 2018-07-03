@@ -25,6 +25,7 @@ import { UtilisateurComponent } from './utilisateur/utilisateur.component';
 
 import {FormPartieComponent} from './form-partie/form-partie.component';
 import {Ng2Webstorage} from 'ngx-webstorage';
+import { FormEditcompteComponent } from './form-editcompte/form-editcompte.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'accueil', pathMatch: 'full'},
@@ -36,7 +37,8 @@ const routes: Routes = [
   {path: 'accueil', component: AccueilComponent},
   {path: 'partie/:id', component: PartieComponent},
   {path: 'listUser', component: UtilisateurListComponent},
-  {path: 'formPartie', component: FormPartieComponent}
+  {path: 'formPartie', component: FormPartieComponent},
+  {path: 'formEditCompte/:id', component: FormEditcompteComponent}
 ];
 
 @NgModule({
@@ -56,7 +58,8 @@ const routes: Routes = [
     DesComponent,
     ChatComponent,
     UtilisateurComponent,
-    FormPartieComponent
+    FormPartieComponent,
+    FormEditcompteComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { UtilisateurService} from "./utilisateur.service";
+import { Utilisateur} from "./utilisateur";
 import {SessionStorageService} from 'ngx-webstorage';
 
 @Component({
@@ -7,7 +9,10 @@ import {SessionStorageService} from 'ngx-webstorage';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private _sessionStorage:SessionStorageService){}
+  utilisateur: Utilisateur;
+  constructor(private _sessionStorage:SessionStorageService,
+              private userService: UtilisateurService){};
+
 
   setSessionStorage(key, value){
     this._sessionStorage.store(key, value);

@@ -39,11 +39,11 @@ export class Utilisateur {
     this._avatar = value;
   }
 
-  get estMj(): string {
+  get estMj(): boolean {
     return this._estMj;
   }
 
-  set estMj(value: string) {
+  set estMj(value: boolean) {
     this._estMj = value;
   }
   constructor(
@@ -52,7 +52,7 @@ export class Utilisateur {
     private _pseudo: string = '',
     private _motDePasse: string = '',
     private _avatar: string = '',
-    private _estMj: string = ''
+    private _estMj: boolean = false
   ) {}
 
 }

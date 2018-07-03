@@ -1,0 +1,16 @@
+#entete {
+  margin-top: 80px;
+  margin-bottom: 20px;
+}
+
+.page-inscription{
+  display: block;
+  margin-top: 15vh;
+}
+.img-ins{
+  display: block;
+  margin: 0 auto;
+}
+.form-ins{
+  padding: 2rem;
+}

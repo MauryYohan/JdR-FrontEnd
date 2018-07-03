@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {FormBuilder, FormGroup, MaxLengthValidator, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Utilisateur} from '../utilisateur';
 import {Router} from '@angular/router';
 import {UtilisateurService} from '../utilisateur.service';
