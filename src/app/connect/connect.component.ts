@@ -48,9 +48,9 @@ export class ConnectComponent implements OnInit {
           if(u.pseudo == this.loginForm.controls['pseudo'].value){
             if(u.motDePasse == this.loginForm.controls['password'].value){
               let idUtil = ''+u.id;
-              sessionStorage.setItem('id', idUtil);
-              sessionStorage.setItem('pseudo', u.pseudo);
-              let idS = '/salle-attente/'+sessionStorage.getItem('id');
+              sessionStorage.setItem('id_joueur', idUtil);
+              sessionStorage.setItem('pseudo_joueur', u.pseudo);
+              let idS = '/salle-attente/'+sessionStorage.getItem('id_joueur');
               this.router.navigate([idS]);
             }
           }

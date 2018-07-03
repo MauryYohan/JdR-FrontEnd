@@ -39,12 +39,13 @@ export class FormInscriptionComponent implements OnInit {
     if (this.inscriptionform.valid) {
       console.log("valide");
       console.log(this.inscriptionform.value);
+      console.log(this.utilisateur);
       this.us.add(this.inscriptionform.value).subscribe(utilisateur => {
         console.log(utilisateur);
-        this.output.emit({'sev':'success', 'sum':'Add successfull!', 'detail': 'Incident ajouté:' + utilisateur.id
+        this.output.emit({'sev':'success', 'sum':'Add successfull!', 'detail': 'Inscription ajouté:' + utilisateur.id
 
         });
-      })
+      });
       this.hideDialog();
     }
   }
