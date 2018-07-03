@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {PersonnageService} from '../personnage.service';
 import {PartieService} from '../partie.service';
-import {JoueurService} from '../joueur.service';
 import {SessionStorageService} from 'ngx-webstorage';
+import {UtilisateurService} from '../utilisateur.service';
 
 @Component({
   selector: 'app-partie',
@@ -16,7 +16,7 @@ export class PartieComponent implements OnInit {
   personnage;
   partie;
   joueur;
-  constructor(private personnageService: PersonnageService, private route: ActivatedRoute, private partieService:PartieService, private joueurService: JoueurService, private session: SessionStorageService) { }
+  constructor(private personnageService: PersonnageService, private route: ActivatedRoute, private partieService:PartieService, private utilsateurService: UtilisateurService, private session: SessionStorageService) { }
 
   ngOnInit() {
 
@@ -28,7 +28,7 @@ export class PartieComponent implements OnInit {
         this.partie = pp;
         console.log(this.partie);
         let joueurId = this.session.retrieve('id');
-        this.joueurService.getOne(joueurId).subscribe( joueur => {
+        this.utilsateurService.getOne(joueurId).subscribe( joueur => {
           this.joueur = joueur;
           console.log(this.joueur);
 

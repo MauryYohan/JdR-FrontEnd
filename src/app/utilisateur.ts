@@ -39,12 +39,12 @@ export class Utilisateur {
     this._avatar = value;
   }
 
-  get uid(): string {
-    return this._uid;
+  get estMj(): string {
+    return this._estMj;
   }
 
-  set uid(value: string) {
-    this._uid = value;
+  set estMj(value: string) {
+    this._estMj = value;
   }
   constructor(
     private _id: number = 0,
@@ -52,7 +52,7 @@ export class Utilisateur {
     private _pseudo: string = '',
     private _motDePasse: string = '',
     private _avatar: string = '',
-    private _uid: string = ''
+    private _estMj: string = ''
   ) {}
 
 }

@@ -1,4 +1,4 @@
-import {Joueur} from './joueur';
+import {Utilisateur} from './utilisateur';
 
 export class Personnage {
 

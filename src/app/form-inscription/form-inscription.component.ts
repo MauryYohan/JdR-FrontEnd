@@ -3,7 +3,6 @@ import {FormBuilder, FormGroup, MaxLengthValidator, Validators} from '@angular/f
 import {Utilisateur} from '../utilisateur';
 import {Router} from '@angular/router';
 import {UtilisateurService} from '../utilisateur.service';
-import {Personnage} from '../personnage';
 
 @Component({
   selector: 'app-form-inscription',

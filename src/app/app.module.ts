@@ -14,7 +14,6 @@ import {UtilisateurService} from './utilisateur.service';
 import {PersonnageService} from './personnage.service';
 import { ListPersonnageComponent } from './list-personnage/list-personnage.component';
 import {SalleAttenteComponent} from './salle-attente/salle-attente.component';
-import {JoueurService} from './joueur.service';
 import { AccueilComponent } from './accueil/accueil.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { FormInscriptionComponent } from './form-inscription/form-inscription.component';
@@ -69,7 +68,7 @@ const routes: Routes = [
     Ng2Webstorage
   ],
 
-  providers: [JoueurService, UtilisateurService, PersonnageService, PartieService],
+  providers: [UtilisateurService, PersonnageService, PartieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
