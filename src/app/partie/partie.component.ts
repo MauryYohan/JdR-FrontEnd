@@ -14,6 +14,7 @@ export class PartieComponent implements OnInit {
   idPerso;
   idPartie;
   personnage;
+  personnages
   partie;
   joueur;
   constructor(private personnageService: PersonnageService, private route: ActivatedRoute, private partieService:PartieService, private utilsateurService: UtilisateurService, private session: SessionStorageService) { }
@@ -26,11 +27,17 @@ export class PartieComponent implements OnInit {
       })
     this.partieService.getOne(this.idPartie).subscribe(pp => {
         this.partie = pp;
-        console.log(this.partie);
-        let joueurId = this.session.retrieve('id');
-        this.utilsateurService.getOne(joueurId).subscribe( joueur => {
-          this.joueur = joueur;
-          console.log(this.joueur);
+        sessionStorage.setItem('id_partie',this.partie.id);
+        this.personnageService.list().subscribe( personnages => {
+          this.personnages = personnages;
+
+          for(let pers of personnages) {
+
+            if(pers.partie.id == sessionStorage.getItem('id_partie') && pers.utilisateurs.id == sessionStorage.getItem('id_joueur') )
+            {
+              this.personnage = pers;
+            }
+          }
 
         });
 
