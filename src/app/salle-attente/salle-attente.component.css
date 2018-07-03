@@ -1,9 +1,16 @@
+.container{
+  background-image: url("/assets/imageFond/fondEcran3.jpg");
+  background-repeat: no-repeat;
+}
+
+.police {
+  font-family: OCR A Std, monospace, sans-serif;
+}
 
 .btn-flex{
   display: flex!important;
 }
 .dashboard-left{
-  background-color: #ff413e;
   height: 100vh;
 }
 .phrase-connexion{
@@ -22,15 +29,18 @@
   padding: 0!important;
 }
 .dashboard ul li{
-  background-color: #ff413e;
+  background-color: #DCDCDC;
   text-align: center;
 }
 .dashboard ul li:hover{
-  background-color: #007bff;
+  background-color: #6c757d;
+  color: white;
 }
 .dashboard-section h2{
   text-align: center;
   margin-top: 1rem;
+  color: #000000;
+  font-family: "Monotype Corsiva";
 }
 .block-partie{
   border: 1px solid black;
@@ -38,4 +48,8 @@
 }
 .block-partie button{
   margin-left: 80%;
+}
+p {
+  font-family: "Monotype Corsiva";
+  font-size: x-large;
 }

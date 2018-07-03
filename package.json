@@ -27,6 +27,7 @@
     "ngx-webstorage": "^2.0.1",
     "popper.js": "^1.14.3",
     "rxjs": "^6.0.0",
+    "webstorage": "0.0.7",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
