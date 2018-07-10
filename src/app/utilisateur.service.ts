@@ -41,6 +41,14 @@ export class UtilisateurService {
     return this.http.delete(this.baseUrl + id);
   }
 
+  getOneByPseudoAndPsw(pseudo: string, pass: string): Observable<Utilisateur>  {
+    try{
+      return this.http.get<Utilisateur>(this.baseUrl + "pseudo/" + pseudo + "/mdp/"+pass);
+    } catch(e) {
+      console.log("ERREUR-->",e);
+      throw(e);
+    }
+  }
 
 
 }

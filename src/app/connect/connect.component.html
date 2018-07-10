@@ -2,20 +2,15 @@
   <div id="entete" style="text-align: center">
     <h3>Bienvenue dans le jeu ! </h3>
   </div>
-
   <div class="row">
-
     <div class="composant" id="composant">
-
       <div class="card">
         <div class="card-body">
-
           <div class="row">
             <div class="col-4">
-            <img class="img-connect" src="assets/imageConnexion/connexion.jpg">
+              <img class="img-connect" src="assets/imageConnexion/connexion.jpg">
             </div>
             <div class="col-8">
-
               <form class="form-connect" [formGroup]="loginForm" id="cardFormConnect" (ngSubmit)="submitForm()">
                 <div id="formConnect" class="form-group">
                   <label for="pseudo" style=" font-weight: bold;">Pseudo</label>
@@ -28,17 +23,15 @@
                   <input type="password" class="form-control" id="password" formControlName="password" placeholder="Merci de renseigner votre mot de passe">
                   <!-- <small id="passwordHelp" class="form-password">Mot de passe perdu? Récupérez-le ici !</small> -->
                 </div>
-
-                <button type="submit" class="btn btn-outline-primary">Se connecter</button>
-
+                <div *ngIf="error.length > 0" style="color: red">
+                  Login et mot de passe incorrect.
+                </div><br>
+                <button type="submit" class="btn btn-primary">Se connecter</button>
               </form>
-
             </div>
-
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </div>

@@ -33,8 +33,9 @@ export class PartieComponent implements OnInit {
 
           for(let pers of personnages) {
 
-            if(pers.partie.id == sessionStorage.getItem('id_partie') && pers.utilisateurs.id == sessionStorage.getItem('id_joueur') )
+            if(pers.partie.id == sessionStorage.getItem('id_partie') && pers.utilisateurs.id == sessionStorage.getItem('idUtil') )
             {
+
               this.personnage = pers;
             }
           }

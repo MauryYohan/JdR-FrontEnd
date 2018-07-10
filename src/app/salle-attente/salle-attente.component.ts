@@ -12,7 +12,7 @@ import {UtilisateurService} from '../utilisateur.service';
 })
 export class SalleAttenteComponent implements OnInit {
 
-
+  estMJ;
   joueur;
   joueurId;
   constructor(private utilisateurService: UtilisateurService,
@@ -30,9 +30,9 @@ export class SalleAttenteComponent implements OnInit {
     this.utilisateurService.getOne(this.joueurId).subscribe(pp => {
       this.joueur = pp;
       console.log(this.joueur);
+      sessionStorage.setItem('isMJ', 'false');
+      this.estMJ = sessionStorage.getItem('isMJ');
     });
-
-
   }
   partieRoute(key){
     let idS = '/partie/'+key;

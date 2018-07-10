@@ -7,7 +7,9 @@
       <button class="btn btn-primary bouton-deco" (click)="editCompteRoute(joueur.id)">Modifier mon compte</button>
       <img class="img-avatar" src="../../assets/imageCreation/flat-avatar.png">
       <button class="btn btn-secondary bouton-deco">Devenir MJ</button>
-      <button class="btn btn-secondary bouton-deco" [routerLink]="['/formPartie']">Création d'une partie</button>
+      <button *ngIf="estMJ == true" class="btn btn-secondary bouton-deco">Devenir MJ</button>
+      <button *ngIf="estMJ == true" class="btn btn-secondary bouton-deco" [routerLink]="['/formPartie']">Création d'une partie</button>
+
       <button class="btn btn-secondary bouton-deco" [routerLink]="['/']">Déconnexion</button>
       <ul class="list-group">
         <li class="list-group-item">
@@ -24,10 +26,13 @@
         <div class="block-partie">
           <h4>{{p.titrePartie}}</h4>
           <p>{{p.Description}}</p>
-          <button class="btn btn-primary pull-right" (click)="partieRoute(p.id)">Acceder à la partie</button>
+          <div>
+            <app-personnage></app-personnage>
+            <button class="btn btn-primary" (click)="partieRoute(p.id)">Acceder à la partie</button>
+          </div>
         </div>
       </div>
-      <app-personnage></app-personnage>
+
     </div>
   </div>
 </div>

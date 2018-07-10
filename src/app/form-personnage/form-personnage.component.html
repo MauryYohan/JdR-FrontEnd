@@ -1,3 +1,4 @@
+
 <form [formGroup]="personnageform" novalidate
       (ngSubmit)="onSubmit()">
   <div class="form-group">
@@ -10,19 +11,19 @@
   </div>
   <div class="form-group">
     <label for="classe">Choisir sa classe</label>
-      <select id="classe" class="form-control" formControlName="classe">
-        <option>Barbare</option>
-        <option>Barde</option>
-        <option>Druide</option>
-        <option>Ensorceleur</option>
-        <option>Guerrier</option>
-        <option>Magicien</option>
-        <option>Moine</option>
-        <option>Paladin</option>
-        <option>Prêtre</option>
-        <option>Rôdeur</option>
-        <option>Roublard</option>
-      </select>
+    <select id="classe" class="form-control" formControlName="classe">
+      <option>Barbare</option>
+      <option>Barde</option>
+      <option>Druide</option>
+      <option>Ensorceleur</option>
+      <option>Guerrier</option>
+      <option>Magicien</option>
+      <option>Moine</option>
+      <option>Paladin</option>
+      <option>Prêtre</option>
+      <option>Rôdeur</option>
+      <option>Roublard</option>
+    </select>
   </div>
   <label for="pv">Points de vie</label><br>
   <div class="form-row">
@@ -30,7 +31,7 @@
       <ngb-progressbar  min="1" type="info" [value]="this.personnage.pv" ngDefaultControl></ngb-progressbar>
     </div>
     <div class="form-group col-sm-2">
-      <input  min="1" type="number" class="form-control"  [(ngModel)]="this.personnage.pv" id="pv" formControlName="pv" ngDefaultControl>
+      <input  min="1" max="100" type="number" class="form-control"  [(ngModel)]="this.personnage.pv" id="pv" formControlName="pv" ngDefaultControl>
     </div>
   </div>
   <label for="puissance">Puissance</label>
@@ -39,7 +40,7 @@
       <ngb-progressbar min="1" max="10"  type="info" [value]="this.personnage.puissance" ngDefaultControl></ngb-progressbar>
     </div>
     <div class="form-group col-sm-2">
-          <input min="1" max="10" type="number" class="form-control" [(ngModel)]="this.personnage.puissance" id="puissance" formControlName="puissance" ngDefaultControl>
+      <input min="1" max="10" type="number" class="form-control" [(ngModel)]="this.personnage.puissance" id="puissance" formControlName="puissance" ngDefaultControl>
     </div>
   </div>
   <label for="defense">Défense</label>
@@ -92,15 +93,15 @@
   </div>
   <div class="form-group">
     <label for="race">Choisir sa race</label>
-      <select id="race" class="form-control" formControlName="race" placeholder="choisir la race">
-        <option>Demi-elfe</option>
-        <option>Demi-orque</option>
-        <option>Elfe</option>
-        <option>Gnome</option>
-        <option>Halfelin</option>
-        <option>Humain</option>
-        <option>Nain</option>
-      </select>
+    <select id="race" class="form-control" formControlName="race" placeholder="choisir la race">
+      <option>Demi-elfe</option>
+      <option>Demi-orque</option>
+      <option>Elfe</option>
+      <option>Gnome</option>
+      <option>Halfelin</option>
+      <option>Humain</option>
+      <option>Nain</option>
+    </select>
   </div>
   <div class="form-group">
     <label for="sexe">Choisir le sexe</label>
@@ -116,10 +117,12 @@
     <label for="avatar">Choisir son avatar</label>
       <img src="/app/assets/00396952-photo-the-legend-of-zelda-twilight-princess.jpg" formControlName="avatar" id="avatar" class="form-control" />
   </div>-->
-    <div class="form-group">
-      <label for="id_joueur"></label>
-      <input type="hidden" formControlName="id" id="id_joueur" aria-describedby="id">
-    </div>
-  <button type="submit" class="btn btn-outline-primary" [disabled]="!personnageform.valid">Valider</button>
+  <div class="form-group">
+    <label for="id_joueur"></label>
+    <input type="hidden" formControlName="id" id="id_joueur" aria-describedby="id">
+  </div>
+  <div class="button" >
+    <button type="submit" class="btn btn-outline-primary" [disabled]="!personnageform.valid">Valider</button>
+  </div>
 </form>
 

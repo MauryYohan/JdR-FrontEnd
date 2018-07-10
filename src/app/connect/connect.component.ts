@@ -4,7 +4,7 @@ import {UtilisateurService} from '../utilisateur.service';
 import {Utilisateur} from '../utilisateur';
 import {Router} from '@angular/router';
 import {SessionStorageService} from 'ngx-webstorage';
-
+import {utils} from 'protractor';
 @Component({
   selector: 'app-connect',
   templateUrl: './connect.component.html',
@@ -14,6 +14,8 @@ import {SessionStorageService} from 'ngx-webstorage';
 export class ConnectComponent implements OnInit {
 
   @Input() utilisateur: Utilisateur;
+
+  error: string[] = [];
 
   loginForm: FormGroup;
   formSubmitted = false;
@@ -35,31 +37,29 @@ export class ConnectComponent implements OnInit {
   }
 
   submitForm() {
+
+    this.error.splice(0,this.error.length);
     this.formSubmitted = true;
     // Si l'ensemble des champs sont remplie
     if  (this.loginForm.valid) {
-      console.log(this.loginForm.controls['pseudo'].value);
-      console.log(this.loginForm.controls['password'].value);
-      console.log(this.us.getOneByMail(this.loginForm.controls['pseudo'].value));
+      this.us.getOneByPseudoAndPsw(this.loginForm.controls['pseudo'].value, this.loginForm.controls['password'].value).subscribe(
+        utilis =>{
+          console.log('USER FOUNDED YEAHHH', utilis );
+          let Idu = ''+utilis.id;
+          let Nom = ''+utilis.pseudo;
+          sessionStorage.setItem('idUtil', Idu);
+          sessionStorage.setItem('nomJoueur', Nom);
+          let idS = '/salle-attente/'+sessionStorage.getItem('idUtil');
+          this.router.navigate([idS]);
+        },err => {
+          this.error.push('login and pass not correct')
+        } ,
+        () => {
 
-      this.us.list().subscribe(utilis =>{
-        console.log(utilis);
-        for(let u of utilis){
-          if(u.pseudo == this.loginForm.controls['pseudo'].value){
-            if(u.motDePasse == this.loginForm.controls['password'].value){
-              let idUtil = ''+u.id;
-              sessionStorage.setItem('id_joueur', idUtil);
-              sessionStorage.setItem('pseudo_joueur', u.pseudo);
-              let idS = '/salle-attente/'+sessionStorage.getItem('id_joueur');
-              this.router.navigate([idS]);
-            }
-          }
-        }
-      })
 
+        });
     }
 
-  }
 
 
 }

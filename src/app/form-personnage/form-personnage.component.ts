@@ -17,6 +17,7 @@ export class FormPersonnageComponent implements OnInit {
   formtitle='Add';
   display: boolean = false;
 
+
   constructor(private fb: FormBuilder, private router: Router, private ps: PersonnageService) { }
   @Output() output = new EventEmitter();
 
@@ -32,7 +33,7 @@ export class FormPersonnageComponent implements OnInit {
       'id': [this.personnage.id],
       'nom': [this.personnage.nom, Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(20)])],
       'classe': [this.personnage.classe, Validators.compose([Validators.required])],
-      'pv': [this.personnage.pv, Validators.compose([Validators.required, Validators.min(1)])],
+      'pv': [this.personnage.pv, Validators.compose([Validators.required, Validators.min(1), Validators.max(100)])],
       'puissance': [this.personnage.puissance, [Validators.compose([Validators.required, Validators.min(1), Validators.max(10)])]],
       'defense': [this.personnage.defense, [Validators.compose([Validators.required, Validators.min(1), Validators.max(10)])]],
       'esprit': [this.personnage.esprit, [Validators.compose([Validators.required, Validators.min(1), Validators.max(10)])]],
@@ -62,26 +63,23 @@ export class FormPersonnageComponent implements OnInit {
           this.output.emit({'sev':'success', 'sum':'Add successfull!', 'detail': 'Personnage ajouté:'+personnage.id
 
           });
-      })
+        })
       }
       this.hideDialog();
-      }
+    }
   }
 
-    showAddDialog(){
-      this.formtitle='Add';
-      this.personnage = new Personnage();
-      this.showDialog();
-    }
+  showDialog() {
+    this.formSubmitted = false;
+    this.display = true;
+  }
 
-    showDialog() {
-      this.formSubmitted = false;
-      this.display = true;
-      console.log(this.personnage);
-    }
-    hideDialog() {
-      this.display = false;
-      this.router.navigate(['/salle-attente/id']);
-    }
+  hideDialog() {
+    this.display = false;
+    sessionStorage.getItem('id_partie')
+    this.router.navigate(['partie/id_partie']);
+  }
+
+
 
 }

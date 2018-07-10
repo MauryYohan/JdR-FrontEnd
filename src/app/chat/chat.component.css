@@ -7,3 +7,11 @@
   font-family: OCR A Std, monospace, sans-serif;
   margin-top: 20px
 }
+
+.form-control{
+  width: 300px;
+}
+.div-chat{
+  padding: 1rem;
+  width: 484px;
+}

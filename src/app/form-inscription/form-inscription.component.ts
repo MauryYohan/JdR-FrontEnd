@@ -52,5 +52,8 @@ export class FormInscriptionComponent implements OnInit {
     this.display = false;
     this.router.navigate(['/connect']);
   }
+  retour(){
+    this.router.navigate(['/']);
+  }
 
 }

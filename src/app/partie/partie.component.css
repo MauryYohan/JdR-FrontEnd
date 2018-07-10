@@ -1,6 +1,6 @@
 .partieDeroulement{
   height: 80vh;
-  margin-left: 10px;
+  padding:  0 1rem;
   border-bottom: silver 8px solid;
 }
 
@@ -8,6 +8,9 @@
   text-align: justify;
   overflow: auto;
   border-right: silver 8px solid;
+  background-image: url("../../assets/imagePartie/image.png");
+  background-position-x: center;
+  background-position-y: center;
 }
 
 .de{

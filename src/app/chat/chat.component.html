@@ -1,16 +1,11 @@
+<div class="div-chat">
 
-<div class="row" style="margin-left: 70px">
-  <div class="col-sm-3 tchat">
-    <h2>Ici un Tchat écrit</h2>
-  </div>
-  <div class="col-sm-6">
-    <img src="assets/imageTchat/tchat.png" class="imgConstruction" alt="image dun tchat">
-  </div>
-  <div class="col-sm-3 tchat">
-    <h2>Ici un Tchat écrit</h2>
+  <form [formGroup]="tchat"  novalidate>
+    <input formControlName="texte" class="form-control" type="text" id="texte" name="texte" placeholder="Chat" />
+    <button class="btn btn-outline-primary" type="button" (click)="affiche()" [disabled]="!tchat.valid">Envoyer</button>
+  </form>
+
+  <div class="zoneChat" id="zoneChat">
+
   </div>
 </div>
-
-
-
-
